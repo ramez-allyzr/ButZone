@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوابة الدفع - BuyZone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      direction: rtl;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: silver;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .checkout-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      position: relative;
+      background-image: url('data:image/jpeg;base64,/*BASE64_IMAGE_HERE*/');
+      background-repeat: no-repeat;
+      background-size: 120px;
+      background-position: center bottom;
+    }
+
+    .checkout-box h2 {
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .checkout-box h2 img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .input-group select,
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .bank-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .bank-box {
+      flex: 1 1 48%;
+      background-color: #f9f9f9;
+      border: 2px solid transparent;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: right;
+      cursor: pointer;
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bank-box:hover {
+      border-color: #28a745;
+      background-color: #e8f5e9;
+    }
+
+    .bank-box input {
+      margin-left: 8px;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .bank-box img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    button {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 480px) {
+      .bank-options {
+        flex-direction: column;
+      }
+
+      .bank-box {
+        flex: 1 1 100%;
+      }
+      pay-button {
+  width: 100%;
+  background: linear-gradient(135deg, #009688, #4caf50);
+  color: rgb(100, 45, 45);
+  padding: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(75, 123, 190, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pay-button:hover {
+  background: linear-gradient(135deg, #00796b, #388e3c);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.pay-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="checkout-box">
+      <h2>
+        بوابة الدفع "BuyZone"
+
+      </h2>
+
+      <form id="payment-form">
+        <!-- نوع العملية -->
+        <div class="input-group">
+          <label for="operation-type">نوع العملية:</label>
+          <select id="operation-type" required>
+            <option value="">-- اختر نوع العملية --</option>
+            <option value="deposit">إيداع من حساب إلى حساب</option>
+            <option value="transfer">إرسال حوالة داخلية إلى اسم</option>
+            <option value="deposit">ارسال حوالة خارجية</option>
+          </select>
+        </div>
+
+        <!-- البنوك -->
+        <div class="input-group">
+          <label>اختر البنك:</label>
+          <div class="bank-options">
+            <label class="bank-box">
+              <input type="radio" name="bank" value="karimi" required />
+              <img src="بنك الكريمي.png" alt="بنك الكريمي" />
+              بنك الكريمي
+            </label>
+
+            <label class="bank-box">
+              <input type="radio" name="bank" value="aden-bank" />
+              <img src="بنك عدن.jpeg" alt="بنك عدن" />
+              بنك عدن
+            </label>
+
+            <label class="bank-box">
+              <input type="radio" name="bank" value="karimi-express" />
+              <img src="الكريمي اكسبرس.png" alt="الكريمي إكسبريس" />
+              الكريمي إكسبريس
+            </label>
+
+            <label class="bank-box">
+              <input type="radio" name="bank" value="alqutibi" />
+              <img src="بنك القطيبي.jpg" alt="بنك القطيبي" />
+              بنك القطيبي
+            </label>
+          </div>
+        </div>
+
+        <!-- بيانات المستفيد -->
+        <div class="input-group" id="dynamic-input">
+          <label for="target-info">رقم الحساب / اسم المستفيد:</label>
+          <input type="text" id="target-info" placeholder="أدخل المعلومات" required />
+        </div>
+
+        <button type="submit">تأكيد الدفع</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const operationType = document.getElementById('operation-type');
+    const dynamicLabel = document.querySelector('#dynamic-input label');
+    const targetInput = document.getElementById('target-info');
+
+    operationType.addEventListener('change', function () {
+      if (this.value === 'deposit') {
+        dynamicLabel.textContent = 'رقم الحساب:';
+        targetInput.placeholder = 'أدخل رقم الحساب';
+      } else if (this.value === 'transfer') {
+        dynamicLabel.textContent = 'اسم المستفيد:';
+        targetInput.placeholder = 'أدخل اسم المستفيد';
+      } else {
+        dynamicLabel.textContent = 'رقم الحساب / اسم المستفيد:';
+        targetInput.placeholder = 'أدخل المعلومات';
+      }
+    });
+
+    document.getElementById("payment-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("تم إرسال بيانات الدفع بنجاح ");
+    });
+  </script>
+</body>
+</html>
+

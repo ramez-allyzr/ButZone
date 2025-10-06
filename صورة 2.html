@@ -5,66 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
-    text-align: center;
+text-align: center;
 }
 .product-card {
-    max-width: 500px;
-    margin: 20px auto; 
-    width: 90%; 
+max-width: 500px;
+margin: 20px auto; 
+width: 90%; 
 }
 .description-text {
-    text-align: center; 
-    display: block;
-    margin: 10px 15px 20px 15px; 
-    line-height: 1.5; 
+text-align: center; 
+display: block;
+margin: 10px 15px 20px 15px; 
+line-height: 1.5; 
 }
 .buttons-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    padding: 15px 0;
+display: flex;
+gap: 20px;
+justify-content: center;
+padding: 15px 0;
 }
 .button {
-    display: inline-block;
-    padding: 15px 35px; 
-    background-color: #a97142;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    white-space: nowrap; 
+display: inline-block;
+padding: 15px 35px; 
+background-color: #a97142;
+color: white;
+text-decoration: none;
+border-radius: 10px;
+font-size: 20px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+white-space: nowrap; 
 }
 .button:hover{background-color: #ff0000;}
-
-/* التنسيق الجديد والمبسط للسعر */
-.new-price-display {
-    text-align: center;
-    color: red;
-    font-family: Arial;
-    font-weight: bold;
-    display: block;
-    line-height: 1.2;
-    padding: 10px 0;
+p font[color="red"] {
+display: block;
+text-align: center;
 }
-.price-label {
-    font-size: 40px; /* حجم "السعر الجديد=" */
-    display: inline;
-}
-.price-value {
-    font-size: 55px; /* حجم "78,200" */
-    margin: 0 5px;
-    display: inline-block;
-}
-.currency-unit-final {
-    font-size: 55px; /* حجم "ريال" */
-    display: inline-block;
-}
-
-/* **التبسيط السحري:** نستخدم خاصية direction: rtl لعرض المحتوى العربي. 
-   ولكن لعكس ترتيب الرقم والعملة، نعيد استخدامها على الجزء المعني.
-   للتطبيق السهل، سنقوم بعكس الترتيب في HTML. */
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية معرفة السعر.jpg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
@@ -77,13 +53,10 @@ body {
 بحذاء رياضي أبيض </font></p>
 
 <p><FONT color="black" FACE="ARIAL"><s> السعر القديم= 92,000 ريال</s></font></p>
-
-<div class="new-price-display">
-    <span class="price-label"> السعر الجديد= </span>
-    
-    <span class="price-value"> 78,200 </span>
-    <span class="currency-unit-final"> ريال</span>
-</div>
+<p>
+<FONT size="7" color="red" FACE="ARIAL"> =السعر الجديد </font>
+<FONT size="7" color="red" FACE="ARIAL"> 78,200 </font><FONT size="7" color="red" FACE="ARIAL"> ريال </font>
+</p>
 
 <div class="buttons-container">
 <a href="صفحة الدفع.html" class="button">أطلب الآن</a>

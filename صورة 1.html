@@ -1,39 +1,114 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <head>
-<title>صورة 1</title>
+<title>صورة 2</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+body {
+    text-align: center;
+}
+
+.product-card {
+    max-width: 450px; 
+    width: 90%; 
+    margin: 20px auto; 
+    background-color: white;
+    border: 3px solid silver;
+    padding: 10px;
+}
+
+.description-text {
+    color: red;
+    font-size: 18px; 
+    font-family: Arial;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.old-price {
+    font-family: Arial;
+    color: black;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.new-price-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.new-price-label {
+    font-size: 30px; 
+    color: red;
+    font-family: Arial;
+    font-weight: bold;
+    display: block;
+}
+
+.new-price-value {
+    font-size: 55px; 
+    color: red;
+    font-family: Arial;
+    font-weight: bold;
+    display: block;
+}
+
 .buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
+    display: flex; 
+    gap: 20px;
+    justify-content: center;
+    padding: 15px 0;
+}
+
 .button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #a97142;
-Color: white;
-Text-decoration: none;
-Border-radius: 10px;
-Font-size: 18px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #ff0000;}
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #a97142;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.button:hover{background-color: #ff0000;}
 </style>
 </head>
-<body bgcolor="azure" style="background-image:url('خلفية معرفة السعر.jpg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-<center><table bgcolor="white" border="3" bordercolor="silver" align="center" cellspacing="3" cellpadding="5" class="product-content">
-<center><tr>
-<th><IMG SRC="صورة 1.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح<p> 
-وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي </font>
-<p><FONT color="black" FACE="ARIAL"><s> السعر القديم= 110,000 ريال</s></font><p>
-<FONT size="7" color="red" FACE="ARIAL"><pre>السعر الجديد= 93,500 ريال </font>
+<body style="background-image:url('خلفية معرفة السعر.jpg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
 
+<table class="product-card" align="center" cellspacing="0" cellpadding="0">
+<tr>
+    <td>
+        <img src="صورة 2.PNG" alt="ملابس جاهزة" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+        
+        <p class="description-text">
+            طقم شبابي كاجوال أنيق. يتكون من قميص رمادي غامق، <br>
+            وبنطلون بلون بيج مائل للزيتوني، يكمل الإطلالة <br>
+            بحذاء رياضي أبيض
+        </p>
+
+        <p class="old-price">
+            <s style="text-decoration: line-through;"> السعر القديم= 92,000 ريال</s>
+        </p>
+
+        <div class="new-price-container">
+            <span class="new-price-label"> السعر الجديد= </span>
+            <span class="new-price-value"> 78,200 ريال</span>
+        </div>
+
+        <div class="buttons-container">
+            <a href="صفحة الدفع.html" class="button">أطلب الآن</a>
+            <a href="الملابس الجاهزة.html" class="button">العودة للتسوق</a>
+        </div>
+    </td>
+</tr>
+</table>
+
+</body>
+</html>
 <div class="buttons-container">
 <a href="صفحة الدفع.html" class="button">أطلب الآن</a>&nbsp &nbsp
 <a href="الملابس الجاهزة.html" class="button">العودة للتسوق</a>

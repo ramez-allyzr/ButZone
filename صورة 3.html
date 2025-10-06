@@ -1,33 +1,33 @@
 <!DOCTYPE html>
+<html>
 <head>
 <title>صورة 3</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+/* **أنماط CSS مأخوذة من المجموعة الثانية** */
 body {
     text-align: center;
 }
 .product-card {
-    /* تطبيق الحجم الذي اخترته (400px) للمطابقة على اللابتوب */
-    max-width: 400px; 
+    max-width: 400px;
     margin: 20px auto; 
     width: 90%; 
 }
 .description-text {
-    /* تنسيق النص الأحمر: محاذاة للوسط وإزالة فواصل الأسطر غير المرغوبة */
     text-align: center; 
     display: block;
     margin: 10px 15px 20px 15px; 
     line-height: 1.5; 
 }
 .buttons-container {
+    /* تم إبقاء 10px من المجموعة الثانية */
     display: flex;
     gap: 20px;
     justify-content: center;
-    padding: 15px 0;
+    padding: 10px 0; 
 }
 .button {
-    /* تطبيق تنسيق الأزرار الذي أعجبك */
     display: inline-block;
     padding: 15px 35px; 
     background-color: #a97142;
@@ -40,39 +40,14 @@ body {
     white-space: nowrap; 
 }
 .button:hover{background-color: #ff0000;}
-
-/* تنسيق السعر الجديد (باستخدام التنسيق المبسَّط) */
-.new-price-display {
-    text-align: center;
-    color: red;
-    font-family: Arial;
-    font-weight: bold;
-    display: block;
-    line-height: 1.2;
-    padding: 10px 0;
-}
-.price-label {
-    font-size: 40px;
-    display: block; 
-}
-.price-value {
-    font-size: 55px;
-margin: 0 5px;
-display: inline-block;
-}
-.currency-unit-final {
-font-size: 55px;
-display: inline-block;
-}
-/* تصحيح لتنسيق النص الأحمر القديم */
+/* تنسيق النص الأحمر القديم */
 p font[color="red"] {
-display: block;
-text-align: center;
+    display: block;
+    text-align: center;
 }
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية معرفة السعر.jpg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-
 <table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
 <tr>
 <th>
@@ -84,12 +59,9 @@ text-align: center;
 
 <p><FONT color="black" FACE="ARIAL"><s> السعر القديم= 95,000 ريال</s></font></p>
 
-<div class="new-price-display">
-<span class="price-label"> السعر الجديد= </span>
-    
-<span class="price-value"> 80,750 </span>
-<span class="currency-unit-final"> ريال</span>
-</div>
+<p>
+<FONT size="7" color="red" FACE="ARIAL"> السعر الجديد= 80,750 ريال </font>
+</p>
 
 <div class="buttons-container">
 <a href="صفحة الدفع.html" class="button">أطلب الآن</a>
@@ -100,3 +72,5 @@ text-align: center;
 </table>
 </body>
 </html>
+
+    

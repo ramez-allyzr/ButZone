@@ -1,46 +1,69 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
 <head>
 <title>صورة 9</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+body {
+text-align: center;
+}
+.product-card {
+max-width: 400px;
+margin: 20px auto; 
+width: 90%; 
+}
+.description-text {
+text-align: center; 
+display: block;
+margin: 10px 15px 20px 15px; 
+line-height: 1.5; 
+}
 .buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
+display: flex;
+gap: 20px;
+justify-content: center;
+padding: 10px 0;
+}
 .button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #a97142;
-Color: white;
-Text-decoration: none;
-Border-radius: 10px;
-Font-size: 20px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #ff0000;}
+display: inline-block;
+padding: 15px 35px; 
+background-color: #a97142;
+color: white;
+text-decoration: none;
+border-radius: 10px;
+font-size: 20px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+white-space: nowrap; 
+}
+.button:hover{background-color: #ff0000;}
+p font[color="red"] {
+display: block;
+text-align: center;
+}
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية معرفة السعر.jpg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-<center><table bgcolor="white" border="3" bordercolor="silver" align="center" width="30%" cellspacing="3" cellpadding="5">
-<center><tr>
-<th><IMG SRC="صورة 9.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون <p>
-جينز أبيض، وحذاء رياضي أبيض</font>
-<p><FONT color="black" FACE="ARIAL"><s> السعر القديم= 112,000 ريال</s></font><p>
+<table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
+<tr>
+<th>
+<IMG SRC="صورة 9.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;">
+
+<p class="description-text"><FONT color="red" SIZE="4" FACE="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون 
+جينز أبيض، وحذاء رياضي أبيض</font></p>
+
+<p><FONT color="black" FACE="ARIAL"><s> السعر القديم= 112,000 ريال</s></font></p>
+<p>
 <FONT size="7" color="red" FACE="ARIAL"> السعر الجديد= 95,200 ريال</font>
+</p>
 
 <div class="buttons-container">
-<a href="صفحة الدفع.html" class="button">أطلب الآن</a>&nbsp &nbsp
+<a href="صفحة الدفع.html" class="button">أطلب الآن</a>
 <a href="الملابس الجاهزة.html" class="button">العودة للتسوق</a>
 </div>
 </th>
 </tr>
 </table>
 </body>
-
 </html>

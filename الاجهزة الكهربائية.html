@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .content-wrapper {
-    /* التعديل هنا: جعل أقصى عرض 800px بدلاً من 1200px لجعل الصفحة "متوسطة" */
-    max-width: 800px; 
+    max-width: 800px; /* القيمة التي تم تعديلها سابقاً */
     margin-left: auto;
     margin-right: auto;
     text-align: center; 
@@ -43,6 +42,20 @@ Transition: background-color 0.3s ease;}
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ===== التعديل الإضافي هنا لجعل الجدول بعمود واحد على الجوالات ===== */
+@media (max-width: 600px) {
+    .product-card th, 
+    .product-card td {
+        display: block; 
+        width: 100%; 
+        box-sizing: border-box;
+    }
+    .product-card {
+        border-collapse: separate;
+    }
+}
+/* ================================================================= */
 
 </style>
 </head>

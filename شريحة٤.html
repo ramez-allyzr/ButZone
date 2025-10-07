@@ -1,43 +1,69 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
 <head>
-<title>٤شريحة</title>
+<title>شريحة4</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+body {
+text-align: center;
+}
+.product-card {
+max-width: 400px;
+margin: 20px auto; 
+width: 90%; 
+}
+.description-text {
+text-align: center; 
+display: block;
+margin: 10px 15px 20px 15px; 
+line-height: 1.5; 
+}
 .buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
+display: flex;
+gap: 20px;
+justify-content: center;
+padding: 10px 0;
+}
 .button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #007bff;
-Color: white;
-Text-decoration: none;
-Border-radius: 10px;
-Font-size: 25px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #0056b3;}
+display: inline-block;
+padding: 15px 35px;
+background-color: #007bff;
+color: white;
+text-decoration: none;
+border-radius: 10px;
+font-size: 20px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+white-space: nowrap; 
+}
+.button:hover{background-color: #ff0000;}
+p font[color="red"] {
+display: block;
+text-align: center;
+}
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية صفحة الاسعار.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-<center><b><table bgcolor="white" border="3" bordercolor="silver" align="center" height="25" width="15" cellspacing="3" cellpadding="5">
-<center><tr>
-<td><center><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي" align="center">
-<p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة اتوماتيك "بوش" باب امامي لون رمادي 
+<table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
+<tr>
+<th>
+<IMG SRC="شريحة4.PNG" ALT="تحميل صورة المنتج" align="center" style="max-width: 100%; height: auto;">
+
+<p class="description-text"><FONT color="red" SIZE="4" FACE="ARIAL">غسالة اتوماتيك "بوش" باب امامي لون رمادي <p> 
+(ضمان 5 سنوات)</font></p>
+
+<p><FONT color="black" FACE="ARIAL"><s> السعر القديم= 550,000 ريال</s></font></p>
 <p>
-(ضمان 5 سنوات)<p>
-  <FONT color="black"><s> السعر القديم= 550,000 ريال</s><p>
-    <FONT size="7" color="red"> السعر الجديد= 412,500 ريال
+<FONT size="7" color="red" FACE="ARIAL"> السعر الجديد= 412,500 ريال </font>
+</p>
 
 <div class="buttons-container">
 <a href="صفحة الدفع.html" class="button">أطلب الآن</a>
 <a href="الاجهزة الكهربائية.html" class="button">العودة للتسوق</a>
 </div>
+</th>
+</tr>
 </table>
 </body>
 </html>

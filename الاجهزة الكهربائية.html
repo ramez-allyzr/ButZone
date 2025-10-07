@@ -1,36 +1,29 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
 <title>الاجهزة الكهربائية</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-.content-wrapper {
-    max-width: 1200px; 
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; 
+/* ** ملاحظة: لضمان التوسيط والاستجابة الأساسية للصور على الجوال، اضطررنا للاحتفاظ
+    بهذا القدر القليل من CSS.
+*/
+body {
+    direction: rtl; /* هام للنص العربي */
+    margin: 0;
+    text-align: center;
 }
 
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
-.buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
-.button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #FF0000;
-Color: white;
-Text-decoration: none;
-Border-radius: 30px;
-Font-size: 25px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #0056b3;}
+/* ** هذا الجدول الرئيسي هو المسؤول عن توسيط الصفحة وتحديد حجمها المتوسط */
+.main-wrapper-table {
+    width: 95%; /* حجم متوسط يناسب الشاشات الكبيرة والصغيرة */
+    max-width: 1000px; /* لضمان عدم الاتساع أكثر من اللازم على الشاشات الكبيرة */
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse; 
+}
 
+/* تنسيق صور المنتجات لجعلها مستجيبة داخل الجدول */
 .product-card img {
     max-width: 100%;
     height: auto;
@@ -38,71 +31,178 @@ Transition: background-color 0.3s ease;}
     margin-left: auto;
     margin-right: auto;
 }
-.product-card {
-    margin-left: auto;
-    margin-right: auto;
-}
 
+/* تنسيق زر العودة */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 20px; 
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* لمنع كسر النص على الأجهزة الصغيرة */
+}
+.button:hover {
+    background-color: #0056b3;
+}
 </style>
 </head>
+
 <body bgcolor="azure" style="background-image:url('خلفية صفحة الاجهزة الكهربائية.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
 
-<div class="content-wrapper">
+<table class="main-wrapper-table" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
 
-    <img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
+<img src="الشعار بدون خلفية.png" alt="BuyZone" style="max-width: 300px; height: auto;"><br>
 
-    <b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
-    _______________________________________<p></font>
-    <font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الاجهزة الكهربائية</font> <p>
-    <pre>
-    <table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
+    <br>
+    <font SIZE="5" color="darkorange" face="Tahoma">
+        <b>سرعةٌ في التوصيل ... وجودةٌ في المنتج</b> 
+        <br> 
+        <hr width="250" color="darkorange" size="2">
+    </font>
+    
+    <font color="black" SIZE="6" face="DecoType Naskh Variants">
+        <b>مرحباً بكم في صفحة الاجهزة الكهربائية</b>
+    </font> 
+    <br><br>
+
+    <table bgcolor="white" border="3" bordercolor="silver" cellspacing="10" cellpadding="15" width="100%">
+    
     <tr>
-    <th><a href="شريحة٧.html"><IMG SRC="شريحة7.PNG" ALT="مكينة صنع القهوة">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">مكينة صناعة القهوة اسبريسوا كوب واحد
-    (ضمان سنتين)</th>
-    <th><a href="شريحة٢.html"><IMG SRC="شريحة2.PNG" ALT="خلاطة كهربائية">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">خلاطة عصائر "سوناي" حجم كبير درجة أولى 
-    خلاطة بهارات + قنينة ماء مجاناً +</th>
+    <td width="50%" align="center">
+    <a href="شريحة٧.html">
+    <img src="شريحة7.PNG" ALT="مكينة صنع القهوة" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">مكينة صناعة القهوة اسبريسوا كوب واحد
+    (ضمان سنتين)
+    </FONT>
+    </p>
+    </a>
+    </td>
+    
+    <td width="50%" align="center">
+    <a href="شريحة٢.html">
+    <img src="شريحة2.PNG" ALT="خلاطة كهربائية" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">خلاطة عصائر "سوناي" حجم كبير درجة أولى 
+    خلاطة بهارات + قنينة ماء مجاناً +
+    </FONT>
+    </p>
+    </a>
+    </td>
     </tr>
+    
     <tr>
-    <td><a href="شريحة٩.html"><IMG SRC="شريحة9.PNG" ALT="روبوت التنظيف">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">GPS مكنسة كهربائية روبوتيك مع نظام 
-    (ضمان 4 سنوات)</td>
-    <td><a href="شريحة٨.html"><IMG SRC="شريحة8.PNG" ALT="عجانة خليط">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">عجانة خليط "كيكوتيك" مطورة درجة ثاني
-    (ضمان 3 سنوات)</td>
+    <td width="50%" align="center">
+    <a href="شريحة٩.html">
+    <img src="شريحة9.PNG" ALT="روبوت التنظيف" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">مكنسة كهربائية روبوتيك مع نظام GPS 
+    (ضمان 4 سنوات)
+    </FONT>
+    </p>
+    </a>
+    </td>
+    
+    <td width="50%" align="center">
+    <a href="شريحة٨.html">
+    <img src="شريحة8.PNG" ALT="عجانة خليط" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">عجانة خليط "كيكوتيك" مطورة درجة ثاني
+    (ضمان 3 سنوات)
+    </FONT>
+    </p>
+    </a>
+    </td>
     </tr>
+    
     <tr>
-    <td><a href="شريحة٣.html"><IMG SRC="شريحة3.PNG" ALT="غلاية شاي">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">غلاي شاي "كينود" درجة أولى 
-    (ضمان 5 سنوات)</td>
-    <td><a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون رمادي 
-    (ضمان 5 سنوات)</td>
-    <tr>
-    <td><a href="شريحة٥.html"><IMG SRC="شريحة5.PNG" ALT="غسالة لون أبيض">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون أبيض 
-    (ضمان 5 سنوات)</td>
-    <td><a href="شريحة١٠.html"><IMG SRC="شريحة10.PNG" ALT="مكنسة كهربائية">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">"مكنسة كهربائية كلاسيكية "باناسونيك 
-    (ضمان سنتين)</td>
+    <td width="50%" align="center">
+    <a href="شريحة٣.html">
+    <img src="شريحة3.PNG" ALT="غلاية شاي" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">غلاي شاي "كينود" درجة أولى 
+    (ضمان 5 سنوات)
+    </FONT>
+    </p>
+    </td>
+    
+    <td width="50%" align="center">
+    <a href="شريحة٤.html">
+    <img src="شريحة4.PNG" ALT="غسالة لون رمادي" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون رمادي 
+    (ضمان 5 سنوات)
+    </FONT>
+    </p>
+    </td>
     </tr>
+    
     <tr>
-    <td><a href="شريحة١.html"><IMG SRC="شريحة1.PNG" ALT="مكنسة كهربائية">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">"مكنسة بشكل عصا طويلة وحديثة "فيليبس 
-    مكنسة فرشاة قصيرة +</td>
-    <td><a href="شريحة٦.html"><IMG SRC="شريحة6.PNG" ALT="ثلاجة هيتاشي">
-    <p><FONT color="red" SIZE="5" FACE="ARIAL">ثلاجة "هيتاشي" حجم كبير '2 ابواب' درجة أولى 
-    (ضمان 10 سنوات)</td>
+    <td width="50%" align="center">
+    <a href="شريحة٥.html">
+    <img src="شريحة5.PNG" ALT="غسالة لون أبيض" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون أبيض 
+    (ضمان 5 سنوات)
+    </FONT>
+    </p>
+    </td>
+    
+    <td width="50%" align="center">
+    <a href="شريحة١٠.html">
+    <img src="شريحة10.PNG" ALT="مكنسة كهربائية" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">مكنسة كهربائية كلاسيكية "باناسونيك" 
+    (ضمان سنتين)
+    </FONT>
+    </p>
+    </td>
+    </tr>
+    
+    <tr>
+    <td width="50%" align="center">
+    <a href="شريحة١.html">
+    <img src="شريحة1.PNG" ALT="مكنسة كهربائية" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">مكنسة بشكل عصا طويلة وحديثة "فيليبس" 
+    مكنسة فرشاة قصيرة +
+    </FONT>
+    </p>
+    </td>
+    
+    <td width="50%" align="center">
+    <a href="شريحة٦.html">
+    <img src="شريحة6.PNG" ALT="ثلاجة هيتاشي" class="product-card img">
+    <p>
+    <FONT color="red" SIZE="5" FACE="ARIAL">ثلاجة "هيتاشي" حجم كبير '2 ابواب' درجة أولى 
+    (ضمان 10 سنوات)
+    </FONT>
+    </p>
+    </td>
     </tr>
 
-    </table><p>
+    </table>
+    
     <div class="buttons-container">
     <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
     </div>
 
-</div>
-</body>
+</td>
+</tr>
+</table>
 
-      </html>
-  
+</body>
+        </html>
+        

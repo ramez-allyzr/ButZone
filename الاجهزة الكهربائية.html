@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* 1. جعل الحاوية متوسطة ومُركزة بثبات */
+/* 1. جعل الحاوية متوسطة وضئيلة ومُركزة بثبات */
 .content-wrapper {
-    max-width: 750px; /* تقليل العرض الأقصى لضمان مظهر متوسط (متوسط إلى صغير) */
+    max-width: 700px; /* العرض الأقصى لضمان مظهر متوسط وضئيل على كل الشاشات */
     margin-left: auto;
     margin-right: auto;
     text-align: center; 
@@ -16,7 +16,7 @@
 
 /* 2. تعديل تنسيقات الجسم والخط العربي */
 body {
-    direction: rtl; /* هام للنص العربي */
+    direction: rtl; 
     margin: 0;
     text-align: center;
 }
@@ -49,21 +49,21 @@ Transition: background-color 0.3s ease;}
     margin-right: auto;
 }
 .product-card {
-    width: 100%; /* ضمان أن الجدول يملأ عرض الحاوية */
-    table-layout: fixed; /* لتحسين عرض الجدول */
+    width: 100%; /* الجدول يملأ عرض الحاوية (700px) */
+    table-layout: fixed; 
 }
 .product-card td, .product-card th {
     width: 50%; /* ضمان تقسيم الخلايا بالتساوي */
     vertical-align: top; 
     text-align: center;
-    padding: 10px;
+    padding: 8px; /* تقليل التبطين قليلاً */
 }
 
-/* تنسيقات غير مستخدمة تم تنظيفها */
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+/* تنسيق الشعار ليتناسب مع العرض الضيق */
+.logo-image {
+    max-width: 200px; /* تقليل حجم الشعار ليتناسب مع 700px */
+    height: auto;
+}
 </style>
 </head>
 
@@ -71,11 +71,11 @@ Margin-bottom: 20px;}
 
 <div class="content-wrapper">
 
-    <img src="الشعار بدون خلفية.png" alt="BuyZone" style="max-width: 250px; height: auto;"><br>
+    <img src="الشعار بدون خلفية.png" alt="BuyZone" class="logo-image"><br>
 
     <b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
     _______________________________________<p></font>
-    <font color="black" SIZE="7" face="DecoType Naskh Variants">مرحباً بكم في صفحة الاجهزة الكهربائية</font> <p>
+    <font color="black" SIZE="6" face="DecoType Naskh Variants">مرحباً بكم في صفحة الاجهزة الكهربائية</font> <p>
 
     <table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
     

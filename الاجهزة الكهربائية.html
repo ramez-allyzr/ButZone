@@ -5,40 +5,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* 1. جعل الحاوية متوسطة ومُركزة */
+/* 1. جعل الحاوية متوسطة ومُركزة بثبات */
 .content-wrapper {
-    max-width: 900px; /* تم تقليل العرض الأقصى من 1200px إلى 900px لجعلها متوسطة */
+    max-width: 750px; /* تقليل العرض الأقصى لضمان مظهر متوسط (متوسط إلى صغير) */
     margin-left: auto;
     margin-right: auto;
     text-align: center; 
-    padding: 10px; /* إضافة مسافة داخلية بسيطة */
+    padding: 10px; 
 }
 
-/* 2. تعديل تنسيقات CSS الموجودة */
-Body {
+/* 2. تعديل تنسيقات الجسم والخط العربي */
+body {
     direction: rtl; /* هام للنص العربي */
+    margin: 0;
+    text-align: center;
 }
-
-/* Body (تنسيقات مدمجة من الكود الأصلي) */
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
 
 /* 3. تعديل حجم زر العودة ليكون متوسطًا */
 .buttons-container {
 Display: flex;
 Gap: 20px;
 Justify-content: center;
-margin-top: 30px; /* زيادة المسافة قبل الزر */
+margin-top: 30px;
 }
 .button {
 Display: inline-block;
-Padding: 12px 25px; /* تقليل حجم التبطين قليلاً */
+Padding: 12px 25px; 
 Background-color: #FF0000;
 Color: white;
 Text-decoration: none;
 Border-radius: 30px;
-Font-size: 20px; /* تقليل حجم الخط من 25px إلى 20px */
+Font-size: 20px; 
 Font-weight: bold;
 Transition: background-color 0.3s ease;}
 .button:hover{Background-color: #0056b3;}
@@ -52,21 +49,21 @@ Transition: background-color 0.3s ease;}
     margin-right: auto;
 }
 .product-card {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* 5. جعل الجدول مستجيبًا ليعمل على الجوال */
-.product-card {
-    width: 100%; /* ضمان أن الجدول يملأ عرض الحاوية على الشاشات الصغيرة */
+    width: 100%; /* ضمان أن الجدول يملأ عرض الحاوية */
     table-layout: fixed; /* لتحسين عرض الجدول */
 }
 .product-card td, .product-card th {
     width: 50%; /* ضمان تقسيم الخلايا بالتساوي */
-    vertical-align: top; /* محاذاة المحتوى للأعلى */
+    vertical-align: top; 
     text-align: center;
-    padding: 10px; /* تقليل التبطين قليلاً */
+    padding: 10px;
 }
+
+/* تنسيقات غير مستخدمة تم تنظيفها */
+Body
+.container {text-align: center;}
+H1 {font-size: 24px;
+Margin-bottom: 20px;}
 </style>
 </head>
 
@@ -74,7 +71,7 @@ Transition: background-color 0.3s ease;}
 
 <div class="content-wrapper">
 
-    <img src="الشعار بدون خلفية.png" alt="BuyZone" height="200" width="300"><br>
+    <img src="الشعار بدون خلفية.png" alt="BuyZone" style="max-width: 250px; height: auto;"><br>
 
     <b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
     _______________________________________<p></font>

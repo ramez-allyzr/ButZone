@@ -1,64 +1,122 @@
 <!DOCTYPE html>
-<html>
 <head>
 <title>الاجهزة الكهربائية</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <style>
-/* أكواد التوسيط والتجاوب المستخرجة والمعدلة */
+/* *** أكواد التوسيط والاستجابة المأخوذة من الصفحة الأولى *** */
+
 body {
-    /* يجعل جميع العناصر النصية في المنتصف افتراضياً */
+    /* توسيط النص داخل الجسم */
     text-align: center;
 }
-.product-card {
-    /* تطبيق التجاوب على جدول المنتجات */
-    max-width: 95%; /* عرض أقصى للجدول للحفاظ على هامش جانبي */
-    width: 90%; /* يسمح له بالتكيف على الهواتف */
-    margin: 20px auto; /* توسيط الجدول في منتصف الصفحة */
-    border-collapse: collapse; /* تحسين مظهر الجدول */
+
+/* تم تحديث كلاس Body وتصحيح الخطأ الإملائي ليصبح body 
+*/
+/* Body { 
+    .container {text-align: center;} 
+} */
+
+/* تم تغيير اسم الكلاس إلى products-grid ليعكس وظيفة عرض المنتجات بشكل شبكي
+    وتم إضافة خصائص التوسيط والاستجابة له
+*/
+.products-grid {
+    /* يجعل العناصر تتوسط في منتصف الشاشة */
+    margin: 20px auto; 
+    /* يضمن أن الجدول لن يتجاوز عرض الحاوية */
+    width: 95%; 
+    /* يضمن التوسيط الأفقي للمحتوى داخل الـ table/div */
+    text-align: center;
 }
-/* تطبيق التجاوب على الصور داخل الجدول */
-.product-card IMG {
-    max-width: 100%; /* لضمان عدم تجاوز الصورة لحجم الخلية */
-    height: auto; /* للحفاظ على نسب الصورة عند التغيير */
+
+/* هذا الجزء مهم جداً للاستجابة على الأجهزة الصغيرة
+    يستخدم Flexbox لترتيب الخلايا (<th> أو <td>)
+*/
+.products-grid table {
+    /* يضمن أن الجدول يستخدم أقصى عرض متاح */
+    width: 100%;
+    /* لإظهار حدود الجدول بشكل صحيح */
+    border-collapse: collapse;
 }
-/* إعداد الخلايا (ث) و (TD) في الجدول لتكون متجاوبة (ضروري للهواتف) */
-.product-card th, .product-card td {
-    display: block; /* جعل كل خلية تظهر في سطر جديد على الشاشات الصغيرة */
-    width: 100%; /* احتلال العرض بالكامل */
-    box-sizing: border-box; /* لضمان أن العرض 100% يشمل الحشوة والحدود */
-    text-align: center; /* توسيط محتوى الخلية بعدما أصبحت كتلة */
-    padding: 10px; /* إضافة حشوة داخلية */
+
+.products-grid th, .products-grid td {
+    /* لجعل كل خلية تتصرف كحاوية مرنة لتسهيل التوسيط */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط المحتوى عموديًا */
+    justify-content: center; /* توسيط المحتوى أفقيًا */
+    padding: 10px;
+    border: 3px solid silver; /* الحدود */
 }
-/* هذا الكود يمكننا من عرض المنتجات جنبًا إلى جنب على شاشات اللابتوب */
-@media (min-width: 600px) {
-    .product-card th, .product-card td {
-        display: table-cell; /* العودة لعرض الخلايا بجانب بعضها البعض كجدول عادي */
-        width: 50%; /* تقسيم العرض بين المنتج الأول والثاني */
+
+/* الاستعلامات الإعلامية (Media Queries) هي التي تجعل الصفحة
+    تستجيب وتتغير على أحجام الشاشات المختلفة (الهاتف/الكمبيوتر)
+*/
+@media (max-width: 768px) {
+    /* في حالة الشاشات الأصغر (مثل الهاتف) */
+    .products-grid tr {
+        /* يجعل الصفوف تظهر بشكل عمودي لتأخذ كل منتج عرض الشاشة الكامل */
+        display: block; 
+    }
+    .products-grid th, .products-grid td {
+        /* يجعل كل خلية تأخذ العرض الكامل */
+        width: 100%;
+        margin-bottom: 20px; /* لإضافة مسافة بين المنتجات */
+    }
+    
+    /* تصغير حجم الخط على الهواتف */
+    font[SIZE="25"] {
+        font-size: 18px !important;
+    }
+    font[SIZE="5"] {
+        font-size: 16px !important;
+    }
+    .products-grid IMG {
+        max-width: 90%;
+        height: auto;
     }
 }
 
-/* أكواد الصفحة الثانية الأصلية */
-H1 {font-size: 24px; Margin-bottom: 20px;}
+@media (min-width: 769px) {
+    /* في حالة الشاشات الأكبر (مثل اللابتوب) */
+    .products-grid th, .products-grid td {
+        /* جعل الخلايا تتشارك العرض */
+        width: 50%; 
+    }
+}
+/* *** نهاية أكواد التوسيط والاستجابة المأخوذة من الصفحة الأولى *** */
+
+/* تنسيقات CSS الأصلية المحدثة
+*/
+H1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 .buttons-container {
     display: flex;
     gap: 20px;
     justify-content: center;
-    padding: 20px 0;
+    padding: 10px 0 30px 0; /* تم زيادة المسافة في الأسفل */
 }
 .button {
     display: inline-block;
     padding: 15px 30px;
     background-color: #FF0000;
-    Color: white;
+    color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    white-space: nowrap;
 }
-.button:hover{Background-color: #0056b3;}
+.button:hover {
+    Background-color: #0056b3;
+}
+/* للتأكد من أن الصور تستجيب داخل الجدول */
+.products-grid IMG {
+    max-width: 100%;
+    height: auto;
+}
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية صفحة الاجهزة الكهربائية.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
@@ -69,7 +127,7 @@ H1 {font-size: 24px; Margin-bottom: 20px;}
 _______________________________________<p></font>
 <font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الاجهزة الكهربائية</font> <p>
 
-<table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
+<table class="products-grid" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
 <tr>
 <th><a href="شريحة٧.html"><IMG SRC="شريحة7.PNG" ALT="مكينة صنع القهوة">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">مكينة صناعة القهوة اسبريسوا كوب واحد
@@ -109,12 +167,10 @@ _______________________________________<p></font>
 <p><FONT color="red" SIZE="5" FACE="ARIAL">ثلاجة "هيتاشي" حجم كبير '2 ابواب' درجة أولى 
 (ضمان 10 سنوات)</td>
 </tr>
-
 </table><p>
 <div class="buttons-container">
 <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
 </div>
 </body>
-
 </html>
     

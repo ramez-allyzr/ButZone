@@ -40,7 +40,7 @@ body {
 .product-card {
     max-width: 95%;
     width: 700px; 
-    margin: 20px auto; 
+    margin: 20px auto; /* التوسيط الأفقي */
     background-color: white;
     border: 3px solid silver;
     border-spacing: 3px;
@@ -48,15 +48,15 @@ body {
     padding: 5px;
 }
 
-/* توسيط المحتوى وتوحيد ارتفاع الخلايا باستخدام Flexbox */
+/* **حل مشكلة تناسق اللابتوب**: استخدام Flexbox لتوحيد الارتفاع والتوسيط العمودي */
 .product-card td, .product-card th {
     text-align: center;
     padding: 10px;
-    min-height: 450px; /* تحديد ارتفاع أدنى لتوحيد الخلايا (Laptop) */
+    min-height: 450px; /* تحديد ارتفاع أدنى للتوحيد */
     display: flex; /* تحويل الخلية إلى Flex Container */
     flex-direction: column; 
-    justify-content: space-between; /* توزيع العناصر (صورة ونص) عمودياً */
-    align-items: center; /* توسيط العناصر أفقيًا */
+    justify-content: space-between; /* التوزيع (للتناسق الرأسي) */
+    align-items: center; /* التوسيط الأفقي للمحتوى الداخلي */
 }
 
 /* تنسيق صور المنتج */
@@ -103,37 +103,43 @@ body {
 /* ---------------------------------------------------------------------- */
 @media (max-width: 768px) {
     .product-card {
-        width: 98%; 
+        width: 100%; 
         max-width: 100%;
         border: none;
+        padding: 0;
     }
 
     .product-card tr {
-        display: table-row;
+        display: table-row; 
         width: 100%;
     }
 
-    /* تطبيق Flexbox مع الترتيب الأفقي هنا */
+    /* **حل مشكلة المسافة على الهاتف**: إزالة الارتفاع الأدنى وتغيير التوزيع */
     .product-card th, .product-card td {
-        width: 48%; 
-        display: inline-flex; /* *هذا يسمح بصفين أفقيًا* */
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 3px;
-        margin: 1px;
+        width: 50%; 
+        display: table-cell; 
+        padding: 5px 2px;
+        margin: 0; 
         border: 1px solid silver; 
         box-sizing: border-box;
-        min-height: 350px; /* ارتفاع أدنى أقل على الهاتف */
+        min-height: unset; /* إزالة الارتفاع الأدنى ليصبح مرنًا */
+        
+        /* Flexbox يبقى لتناسق المحتوى الداخلي */
+        flex-direction: column; 
+        justify-content: flex-start; /* **التعديل الهام**: يبدأ التوزيع من الأعلى */
+        align-items: center;
     }
     
     .product-card img {
-        max-width: 95%; /* تكبير الصورة على الهاتف */
+        max-width: 95%; 
         margin: 5px auto;
     }
 
+    /* لمعالجة قراءة النص */
     .product-description {
-        font-size: 13px; 
+        font-size: 12px; 
+        line-height: 1.2; 
+        padding: 0 2px 5px 2px; /* إضافة حشو سفلي بسيط */
     }
     
     .page-title {

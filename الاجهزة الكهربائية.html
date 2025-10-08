@@ -5,72 +5,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+/* أكواد التوسيط والتجاوب المستخرجة والمعدلة */
 body {
+    /* يجعل جميع العناصر النصية في المنتصف افتراضياً */
     text-align: center;
 }
 .product-card {
-    max-width: 1000px; 
-    margin: 20px auto; 
-    width: 95%; 
-    display: block; 
+    /* تطبيق التجاوب على جدول المنتجات */
+    max-width: 95%; /* عرض أقصى للجدول للحفاظ على هامش جانبي */
+    width: 90%; /* يسمح له بالتكيف على الهواتف */
+    margin: 20px auto; /* توسيط الجدول في منتصف الصفحة */
+    border-collapse: collapse; /* تحسين مظهر الجدول */
 }
+/* تطبيق التجاوب على الصور داخل الجدول */
+.product-card IMG {
+    max-width: 100%; /* لضمان عدم تجاوز الصورة لحجم الخلية */
+    height: auto; /* للحفاظ على نسب الصورة عند التغيير */
+}
+/* إعداد الخلايا (ث) و (TD) في الجدول لتكون متجاوبة (ضروري للهواتف) */
+.product-card th, .product-card td {
+    display: block; /* جعل كل خلية تظهر في سطر جديد على الشاشات الصغيرة */
+    width: 100%; /* احتلال العرض بالكامل */
+    box-sizing: border-box; /* لضمان أن العرض 100% يشمل الحشوة والحدود */
+    text-align: center; /* توسيط محتوى الخلية بعدما أصبحت كتلة */
+    padding: 10px; /* إضافة حشوة داخلية */
+}
+/* هذا الكود يمكننا من عرض المنتجات جنبًا إلى جنب على شاشات اللابتوب */
+@media (min-width: 600px) {
+    .product-card th, .product-card td {
+        display: table-cell; /* العودة لعرض الخلايا بجانب بعضها البعض كجدول عادي */
+        width: 50%; /* تقسيم العرض بين المنتج الأول والثاني */
+    }
+}
+
+/* أكواد الصفحة الثانية الأصلية */
+H1 {font-size: 24px; Margin-bottom: 20px;}
 .buttons-container {
     display: flex;
     gap: 20px;
     justify-content: center;
+    padding: 20px 0;
 }
 .button {
     display: inline-block;
     padding: 15px 30px;
     background-color: #FF0000;
-    color: white;
+    Color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
-.button:hover {
-    background-color: #0056b3;
-}
-.product-card img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .product-card {
-        max-width: 95%;
-        width: 95%;
-    }
-    .product-card table, 
-    .product-card tr {
-        display: block;
-        width: 100%;
-    }
-    .product-card th, 
-    .product-card td {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 10px;
-        margin-bottom: 20px;
-    }
-}
+.button:hover{Background-color: #0056b3;}
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية صفحة الاجهزة الكهربائية.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
 
-<img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350" style="max-width: 80%; height: auto;"><br>
+<img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
 
 <b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
 _______________________________________<p></font>
 <font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الاجهزة الكهربائية</font> <p>
 
 <table class="product-card" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
-
 <tr>
 <th><a href="شريحة٧.html"><IMG SRC="شريحة7.PNG" ALT="مكينة صنع القهوة">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">مكينة صناعة القهوة اسبريسوا كوب واحد
@@ -94,7 +93,6 @@ _______________________________________<p></font>
 <td><a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون رمادي 
 (ضمان 5 سنوات)</td>
-</tr>
 <tr>
 <td><a href="شريحة٥.html"><IMG SRC="شريحة5.PNG" ALT="غسالة لون أبيض">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون أبيض 
@@ -117,5 +115,6 @@ _______________________________________<p></font>
 <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
 </div>
 </body>
+
 </html>
-  
+    

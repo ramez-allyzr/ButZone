@@ -1,134 +1,55 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <head>
 <title>الاجهزة الكهربائية</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* *** أكواد التوسيط والاستجابة المأخوذة من الصفحة الأولى *** */
-
 body {
-    /* توسيط النص داخل الجسم */
-    text-align: center;
+text-align: center;
 }
-
-/* تم تحديث كلاس Body وتصحيح الخطأ الإملائي ليصبح body 
-*/
-/* Body { 
-    .container {text-align: center;} 
-} */
-
-/* تم تغيير اسم الكلاس إلى products-grid ليعكس وظيفة عرض المنتجات بشكل شبكي
-    وتم إضافة خصائص التوسيط والاستجابة له
-*/
-.products-grid {
-    /* يجعل العناصر تتوسط في منتصف الشاشة */
-    margin: 20px auto; 
-    /* يضمن أن الجدول لن يتجاوز عرض الحاوية */
-    width: 95%; 
-    /* يضمن التوسيط الأفقي للمحتوى داخل الـ table/div */
-    text-align: center;
+.product-card {
+max-width: 400px;
+margin: 20px auto; 
+width: 90%; 
 }
-
-/* هذا الجزء مهم جداً للاستجابة على الأجهزة الصغيرة
-    يستخدم Flexbox لترتيب الخلايا (<th> أو <td>)
-*/
-.products-grid table {
-    /* يضمن أن الجدول يستخدم أقصى عرض متاح */
-    width: 100%;
-    /* لإظهار حدود الجدول بشكل صحيح */
-    border-collapse: collapse;
+.description-text {
+text-align: center; 
+display: block;
+margin: 10px 15px 20px 15px; 
+line-height: 1.5; 
 }
-
-.products-grid th, .products-grid td {
-    /* لجعل كل خلية تتصرف كحاوية مرنة لتسهيل التوسيط */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* توسيط المحتوى عموديًا */
-    justify-content: center; /* توسيط المحتوى أفقيًا */
-    padding: 10px;
-    border: 3px solid silver; /* الحدود */
-}
-
-/* الاستعلامات الإعلامية (Media Queries) هي التي تجعل الصفحة
-    تستجيب وتتغير على أحجام الشاشات المختلفة (الهاتف/الكمبيوتر)
-*/
-@media (max-width: 768px) {
-    /* في حالة الشاشات الأصغر (مثل الهاتف) */
-    .products-grid tr {
-        /* يجعل الصفوف تظهر بشكل عمودي لتأخذ كل منتج عرض الشاشة الكامل */
-        display: block; 
-    }
-    .products-grid th, .products-grid td {
-        /* يجعل كل خلية تأخذ العرض الكامل */
-        width: 100%;
-        margin-bottom: 20px; /* لإضافة مسافة بين المنتجات */
-    }
-    
-    /* تصغير حجم الخط على الهواتف */
-    font[SIZE="25"] {
-        font-size: 18px !important;
-    }
-    font[SIZE="5"] {
-        font-size: 16px !important;
-    }
-    .products-grid IMG {
-        max-width: 90%;
-        height: auto;
-    }
-}
-
-@media (min-width: 769px) {
-    /* في حالة الشاشات الأكبر (مثل اللابتوب) */
-    .products-grid th, .products-grid td {
-        /* جعل الخلايا تتشارك العرض */
-        width: 50%; 
-    }
-}
-/* *** نهاية أكواد التوسيط والاستجابة المأخوذة من الصفحة الأولى *** */
-
-/* تنسيقات CSS الأصلية المحدثة
-*/
-H1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+.container {text-align: center;}
+H1 {font-size: 24px;
+Margin-bottom: 20px;}
 .buttons-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    padding: 10px 0 30px 0; /* تم زيادة المسافة في الأسفل */
-}
+Display: flex;
+Gap: 20px;
+Justify-content: center;}
 .button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #FF0000;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 25px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-.button:hover {
-    Background-color: #0056b3;
-}
-/* للتأكد من أن الصور تستجيب داخل الجدول */
-.products-grid IMG {
-    max-width: 100%;
-    height: auto;
-}
+Display: inline-block;
+Padding: 15px 30px;
+Background-color: #FF0000;
+Color: white;
+Text-decoration: none;
+Border-radius: 30px;
+Font-size: 25px;
+Font-weight: bold;
+Transition: background-color 0.3s ease;}
+.button:hover{Background-color: #0056b3;}
+p font[color="red"] {
+display: block;
+text-align: center;
 </style>
 </head>
 <body bgcolor="azure" style="background-image:url('خلفية صفحة الاجهزة الكهربائية.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-
-<img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
+<center><img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
 
 <b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
 _______________________________________<p></font>
 <font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الاجهزة الكهربائية</font> <p>
 
-<table class="products-grid" bgcolor="white" border="3" bordercolor="silver" cellspacing="3" cellpadding="5">
-<tr>
+<table class="product-card" bgcolor="white" border="3" bordercolor="silver" align="center" cellspacing="3" cellpadding="5">
+<center><tr>
 <th><a href="شريحة٧.html"><IMG SRC="شريحة7.PNG" ALT="مكينة صنع القهوة">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">مكينة صناعة القهوة اسبريسوا كوب واحد
 (ضمان سنتين)</th>
@@ -137,40 +58,41 @@ _______________________________________<p></font>
 خلاطة بهارات + قنينة ماء مجاناً +</th>
 </tr>
 <tr>
-<td><a href="شريحة٩.html"><IMG SRC="شريحة9.PNG" ALT="روبوت التنظيف">
+<td><center><a href="شريحة٩.html"><IMG SRC="شريحة9.PNG" ALT="روبوت التنظيف">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">GPS مكنسة كهربائية روبوتيك مع نظام 
 (ضمان 4 سنوات)</td>
-<td><a href="شريحة٨.html"><IMG SRC="شريحة8.PNG" ALT="عجانة خليط">
+<td><center><a href="شريحة٨.html"><IMG SRC="شريحة8.PNG" ALT="عجانة خليط">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">عجانة خليط "كيكوتيك" مطورة درجة ثاني
 (ضمان 3 سنوات)</td>
 </tr>
 <tr>
-<td><a href="شريحة٣.html"><IMG SRC="شريحة3.PNG" ALT="غلاية شاي">
+<td><center><a href="شريحة٣.html"><IMG SRC="شريحة3.PNG" ALT="غلاية شاي">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">غلاي شاي "كينود" درجة أولى 
 (ضمان 5 سنوات)</td>
-<td><a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي">
+<td><center><a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون رمادي 
 (ضمان 5 سنوات)</td>
 <tr>
-<td><a href="شريحة٥.html"><IMG SRC="شريحة5.PNG" ALT="غسالة لون أبيض">
+<td><center><a href="شريحة٥.html"><IMG SRC="شريحة5.PNG" ALT="غسالة لون أبيض">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">غسالة "بووش" اتوماتيك باب امامي لون أبيض 
 (ضمان 5 سنوات)</td>
-<td><a href="شريحة١٠.html"><IMG SRC="شريحة10.PNG" ALT="مكنسة كهربائية">
+<td><center><a href="شريحة١٠.html"><IMG SRC="شريحة10.PNG" ALT="مكنسة كهربائية">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">"مكنسة كهربائية كلاسيكية "باناسونيك 
 (ضمان سنتين)</td>
 </tr>
 <tr>
-<td><a href="شريحة١.html"><IMG SRC="شريحة1.PNG" ALT="مكنسة كهربائية">
+<td><center><a href="شريحة١.html"><IMG SRC="شريحة1.PNG" ALT="مكنسة كهربائية">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">"مكنسة بشكل عصا طويلة وحديثة "فيليبس 
 مكنسة فرشاة قصيرة +</td>
-<td><a href="شريحة٦.html"><IMG SRC="شريحة6.PNG" ALT="ثلاجة هيتاشي">
+<td><center><a href="شريحة٦.html"><IMG SRC="شريحة6.PNG" ALT="ثلاجة هيتاشي">
 <p><FONT color="red" SIZE="5" FACE="ARIAL">ثلاجة "هيتاشي" حجم كبير '2 ابواب' درجة أولى 
 (ضمان 10 سنوات)</td>
 </tr>
+
 </table><p>
 <div class="buttons-container">
 <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
 </div>
 </body>
+
 </html>
-    

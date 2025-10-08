@@ -39,7 +39,7 @@ body {
 /* تنسيق بطاقة المنتج (الجدول) - الإعداد الافتراضي للشاشات الكبيرة */
 .product-card {
     max-width: 95%;
-    width: 700px; /* العرض المخصص للشاشات الكبيرة */
+    width: 700px; 
     margin: 20px auto; 
     background-color: white;
     border: 3px solid silver;
@@ -97,29 +97,29 @@ body {
 /* ---------------------------------------------------------------------- */
 @media (max-width: 768px) {
     .product-card {
-        width: 98%; /* جعل العرض يملأ الشاشة بالكامل تقريباً */
+        width: 98%; 
         max-width: 100%;
-        display: block; /* لضمان مرونة أكبر */
-        border: none; /* إزالة الحدود لتوفير مساحة */
+        border: none;
+        /* *إزالة display: block التي تسببت في الترتيب العمودي سابقًا* */
     }
 
-    /* تحويل كل صف يحتوي منتجين (عمودين) إلى عمود واحد فقط على الهاتف */
+    /* إعادة تعيين الصفوف كصفوف جدول عادية */
     .product-card tr {
-        display: flex;
-        flex-direction: column; 
+        display: table-row;
         width: 100%;
     }
 
+    /* *التعديل الحاسم* لجعل الخلايا تتشارك العرض أفقيًا */
     .product-card th, .product-card td {
-        width: 95%; /* كل منتج يأخذ كامل عرض الشاشة تقريباً */
-        display: block;
-        padding: 15px 0;
-        margin: 10px auto; /* توسيط بطاقة المنتج الفردية */
-        border: 1px solid silver; /* إضافة حدود لكل بطاقة منتج */
+        width: 48%; /* كل خلية تأخذ تقريباً نصف العرض */
+        display: table-cell; /* التأكد من أنها خلية جدول */
+        padding: 10px 5px;
+        border: 1px solid silver; 
+        box-sizing: border-box; /* للتأكد من حساب الحجم بشكل صحيح */
     }
     
     .product-description {
-        font-size: 16px; 
+        font-size: 14px; 
     }
     
     .page-title {
@@ -171,6 +171,7 @@ body {
     <td>
         <a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي"></a>
         <span class="product-description">غسالة "بووش" اتوماتيك باب امامي لون رمادي (ضمان 5 سنوات)</span>
+    </td>
 </tr>
 <tr>
     <td>

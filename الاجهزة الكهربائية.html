@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
-    /* توسيط محتوى الصفحة (الصور والنصوص) */
     text-align: center;
-    /* استخدام CSS لتنسيق الخلفية بشكل أفضل */
     background-color: azure;
     background-image: url('خلفية صفحة الاجهزة الكهربائية.png');
     background-repeat: no-repeat;
@@ -18,13 +16,13 @@ body {
 .logo {
     height: 250px;
     width: 350px;
-    display: block; /* لضمان التوسيط بواسطة text-align: center على الـ body */
-    margin: 0 auto; /* طريقة أخرى لضمان التوسيط إذا لزم الأمر */
+    display: block;
+    margin: 0 auto;
 }
 
 /* تنسيق النص الترحيبي */
 .welcome-slogan {
-    font-size: 20px; /* تم تقليل حجم الخط ليكون أكثر ملاءمة للهاتف */
+    font-size: 20px;
     color: darkorange;
     font-family: Tahoma;
     display: block;
@@ -32,17 +30,17 @@ body {
 }
 .page-title {
     color: black;
-    font-size: 40px; /* حجم كبير للعنوان */
+    font-size: 40px;
     font-family: 'DecoType Naskh Variants';
     display: block;
     margin-bottom: 20px;
 }
 
-/* تنسيق بطاقة المنتج (الجدول) */
+/* تنسيق بطاقة المنتج (الجدول) - الإعداد الافتراضي للشاشات الكبيرة */
 .product-card {
-    max-width: 95%; /* زيادة الحد الأقصى للعرض ليكون مستجيبًا */
-    width: 700px; /* عرض ثابت نسبيًا للشاشات الكبيرة */
-    margin: 20px auto; /* **الحل الرئيسي للتوسيط الأفقي** */
+    max-width: 95%;
+    width: 700px; /* العرض المخصص للشاشات الكبيرة */
+    margin: 20px auto; 
     background-color: white;
     border: 3px solid silver;
     border-spacing: 3px;
@@ -53,22 +51,22 @@ body {
 /* توسيط المحتوى داخل خلايا الجدول (الصور والنصوص) */
 .product-card td, .product-card th {
     text-align: center;
-    vertical-align: top; /* محاذاة النص للأعلى داخل الخلية */
+    vertical-align: top;
     padding: 10px;
 }
 
 /* تنسيق صور المنتج */
 .product-card img {
-    max-width: 100%; /* ضمان أن الصورة لا تتجاوز حجم الخلية */
+    max-width: 100%; 
     height: auto;
     display: block;
-    margin: 0 auto 10px auto; /* توسيط الصورة داخل الخلية */
+    margin: 0 auto 10px auto;
 }
 
 /* تنسيق نص وصف المنتج */
 .product-description {
     color: red;
-    font-size: 20px; /* تم التعديل باستخدام CSS بدلاً من <font SIZE> */
+    font-size: 20px;
     font-family: Arial;
     display: block;
     margin-top: 5px;
@@ -93,6 +91,46 @@ body {
     Transition: background-color 0.3s ease;
 }
 .button:hover{Background-color: #0056b3;}
+
+/* ---------------------------------------------------------------------- */
+/* الـ Media Query لتنسيق شاشات الهواتف (أقل من 768px)       */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .product-card {
+        width: 98%; /* جعل العرض يملأ الشاشة بالكامل تقريباً */
+        max-width: 100%;
+        display: block; /* لضمان مرونة أكبر */
+        border: none; /* إزالة الحدود لتوفير مساحة */
+    }
+
+    /* تحويل كل صف يحتوي منتجين (عمودين) إلى عمود واحد فقط على الهاتف */
+    .product-card tr {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .product-card th, .product-card td {
+        width: 95%; /* كل منتج يأخذ كامل عرض الشاشة تقريباً */
+        display: block;
+        padding: 15px 0;
+        margin: 10px auto; /* توسيط بطاقة المنتج الفردية */
+        border: 1px solid silver; /* إضافة حدود لكل بطاقة منتج */
+    }
+    
+    .product-description {
+        font-size: 16px; 
+    }
+    
+    .page-title {
+        font-size: 30px; 
+    }
+    
+    .logo {
+        height: auto;
+        width: 90%;
+    }
+}
 </style>
 </head>
 <body>

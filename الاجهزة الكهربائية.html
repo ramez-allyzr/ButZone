@@ -48,19 +48,25 @@ body {
     padding: 5px;
 }
 
-/* توسيط المحتوى داخل خلايا الجدول (الصور والنصوص) */
+/* توسيط المحتوى وتوحيد ارتفاع الخلايا باستخدام Flexbox */
 .product-card td, .product-card th {
     text-align: center;
-    vertical-align: top;
     padding: 10px;
+    min-height: 450px; /* تحديد ارتفاع أدنى لتوحيد الخلايا (Laptop) */
+    display: flex; /* تحويل الخلية إلى Flex Container */
+    flex-direction: column; 
+    justify-content: space-between; /* توزيع العناصر (صورة ونص) عمودياً */
+    align-items: center; /* توسيط العناصر أفقيًا */
 }
 
 /* تنسيق صور المنتج */
 .product-card img {
-    max-width: 100%; 
+    max-width: 90%; 
     height: auto;
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 10px auto;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* تنسيق نص وصف المنتج */
@@ -100,26 +106,34 @@ body {
         width: 98%; 
         max-width: 100%;
         border: none;
-        /* *إزالة display: block التي تسببت في الترتيب العمودي سابقًا* */
     }
 
-    /* إعادة تعيين الصفوف كصفوف جدول عادية */
     .product-card tr {
         display: table-row;
         width: 100%;
     }
 
-    /* *التعديل الحاسم* لجعل الخلايا تتشارك العرض أفقيًا */
+    /* تطبيق Flexbox مع الترتيب الأفقي هنا */
     .product-card th, .product-card td {
-        width: 48%; /* كل خلية تأخذ تقريباً نصف العرض */
-        display: table-cell; /* التأكد من أنها خلية جدول */
-        padding: 10px 5px;
+        width: 48%; 
+        display: inline-flex; /* *هذا يسمح بصفين أفقيًا* */
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 3px;
+        margin: 1px;
         border: 1px solid silver; 
-        box-sizing: border-box; /* للتأكد من حساب الحجم بشكل صحيح */
+        box-sizing: border-box;
+        min-height: 350px; /* ارتفاع أدنى أقل على الهاتف */
     }
     
+    .product-card img {
+        max-width: 95%; /* تكبير الصورة على الهاتف */
+        margin: 5px auto;
+    }
+
     .product-description {
-        font-size: 14px; 
+        font-size: 13px; 
     }
     
     .page-title {

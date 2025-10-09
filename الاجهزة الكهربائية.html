@@ -1,222 +1,57 @@
-<!DOCTYPE html>
-<head>
-<title>الاجهزة الكهربائية</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body {
-    text-align: center;
-    background-color: azure;
-    background-image: url('خلفية صفحة الاجهزة الكهربائية.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-/* تنسيق شعار الموقع */
-.logo {
-    height: 250px;
-    width: 350px;
-    display: block;
-    margin: 0 auto;
-}
+/* ... (الأنماط العامة كما هي) ... */
 
-/* تنسيق النص الترحيبي */
-.welcome-slogan {
-    font-size: 20px;
-    color: darkorange;
-    font-family: Tahoma;
-    display: block;
-    margin-bottom: 20px;
-}
-.page-title {
-    color: black;
-    font-size: 40px;
-    font-family: 'DecoType Naskh Variants';
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* تنسيق بطاقة المنتج (الجدول) - الإعداد الافتراضي للشاشات الكبيرة */
+/* تنسيق بطاقة المنتج (الجدول) - الإعداد الافتراضي للشاشات الكبيرة (اللابتوب) */
 .product-card {
-    max-width: 95%;
-    width: 700px; 
-    margin: 20px auto; /* التوسيط الأفقي */
-    background-color: white;
-    border: 3px solid silver;
-    border-spacing: 3px;
-    border-collapse: separate;
-    padding: 5px;
+    /* ... (خصائص العرض والتوسيط) ... */
+    /* **التعديل الحاسم**: إزالة الخصائص التقليدية للجدول وتحويله إلى حاوية Flex */
+    display: flex; 
+    flex-wrap: wrap; /* للسماح للصفوف بالانتقال إلى السطر التالي */
+    /* ... (بقية الخصائص) ... */
 }
 
-/* **حل مشكلة تناسق اللابتوب**: استخدام Flexbox لتوحيد الارتفاع والتوسيط العمودي */
+/* **إلغاء سلوك الصفوف التقليدي وتحويلها إلى عناصر Flex** */
+.product-card tr {
+    display: flex; /* يجعل الصف يمثل سطرًا واحداً مرناً */
+    width: 100%; /* يتمدد ليأخذ عرض الجدول كاملاً */
+}
+
+/* **ضمان تناسق اللابتوب**: استخدام Flexbox لتوحيد الارتفاع والتوسيط العمودي */
 .product-card td, .product-card th {
+    /* **التعديل الجديد**: تحديد عرض 50% لكل خلية */
+    width: 50%; 
+    box-sizing: border-box; /* لضمان أن الـ padding لا يزيد العرض عن 50% */
     text-align: center;
     padding: 10px;
-    min-height: 450px; /* تحديد ارتفاع أدنى للتوحيد */
-    display: flex; /* تحويل الخلية إلى Flex Container */
+    min-height: 450px; 
+    display: flex; /* تطبيق Flexbox لتوحيد الارتفاع الداخلي */
     flex-direction: column; 
-    justify-content: space-between; /* التوزيع (للتناسق الرأسي) */
-    align-items: center; /* التوسيط الأفقي للمحتوى الداخلي */
+    justify-content: space-between; 
+    align-items: center; 
 }
 
-/* تنسيق صور المنتج */
-.product-card img {
-    max-width: 90%; 
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    object-fit: contain;
-    flex-shrink: 0;
-}
+/* ... (بقية الأنماط كما هي) ... */
 
-/* تنسيق نص وصف المنتج */
-.product-description {
-    color: red;
-    font-size: 20px;
-    font-family: Arial;
-    display: block;
-    margin-top: 5px;
-}
 
-.buttons-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #FF0000;
-    Color: white;
-    Text-decoration: none;
-    Border-radius: 30px;
-    Font-size: 25px;
-    Font-weight: bold;
-    Transition: background-color 0.3s ease;
-}
-.button:hover{Background-color: #0056b3;}
-
-/* ---------------------------------------------------------------------- */
-/* الـ Media Query لتنسيق شاشات الهواتف (أقل من 768px)       */
-/* ---------------------------------------------------------------------- */
+/* **إلغاء خصائص Flexbox في الـ Media Query لعدم التعارض مع العرض العادي** */
 @media (max-width: 768px) {
-    .product-card {
-        width: 100%; 
-        max-width: 100%;
-        border: none;
-        padding: 0;
-    }
+    /* ... (أنماط أخرى بدون تغيير) ... */
 
+    /* **إلغاء Flexbox من الجدول والصف في وضع الهاتف** */
+    .product-card {
+        display: block; /* إلغاء خاصية flex */
+    }
     .product-card tr {
-        display: table-row; 
+        display: table-row; /* العودة إلى سلوك الصف التقليدي */
         width: 100%;
     }
 
-    /* **حل مشكلة المسافة على الهاتف**: إزالة الارتفاع الأدنى وتغيير التوزيع */
+    /* **العودة إلى سلوك الجدول التقليدي مع عرض 50% لفرض عمودين** */
     .product-card th, .product-card td {
         width: 50%; 
-        display: table-cell; 
-        padding: 5px 2px;
-        margin: 0; 
-        border: 1px solid silver; 
-        box-sizing: border-box;
-        min-height: unset; /* إزالة الارتفاع الأدنى ليصبح مرنًا */
-        
-        /* Flexbox يبقى لتناسق المحتوى الداخلي */
-        flex-direction: column; 
-        justify-content: flex-start; /* **التعديل الهام**: يبدأ التوزيع من الأعلى */
-        align-items: center;
+        display: table-cell; /* إجبار الخلايا على البقاء في صف واحد */
+        /* ... (بقية الأنماط) ... */
     }
-    
-    .product-card img {
-        max-width: 95%; 
-        margin: 5px auto;
-    }
-
-    /* لمعالجة قراءة النص */
-    .product-description {
-        font-size: 12px; 
-        line-height: 1.2; 
-        padding: 0 2px 5px 2px; /* إضافة حشو سفلي بسيط */
-    }
-    
-    .page-title {
-        font-size: 30px; 
-    }
-    
-    .logo {
-        height: auto;
-        width: 90%;
-    }
+    /* ... (بقية الأنماط كما هي) ... */
 }
 </style>
-</head>
-<body>
-
-<img src="الشعار بدون خلفية.png" alt="BuyZone" class="logo">
-
-<span class="welcome-slogan">سرعةٌ في التوصيل ... وجودةٌ في المنتج</span>
-<hr style="width: 30%; border: 1px solid darkorange; margin-top: -10px;">
-
-<span class="page-title">مرحباً بكم في صفحة الاجهزة الكهربائية</span>
-
-<table class="product-card">
-<tr>
-    <th>
-        <a href="شريحة٧.html"><IMG SRC="شريحة7.PNG" ALT="مكينة صنع القهوة"></a>
-        <span class="product-description">مكينة صناعة القهوة اسبريسوا كوب واحد (ضمان سنتين)</span>
-    </th>
-    <th>
-        <a href="شريحة٢.html"><IMG SRC="شريحة2.PNG" ALT="خلاطة كهربائية"></a>
-        <span class="product-description">خلاطة عصائر "سوناي" حجم كبير درجة أولى خلاطة بهارات + قنينة ماء مجاناً +</span>
-    </th>
-</tr>
-<tr>
-    <td>
-        <a href="شريحة٩.html"><IMG SRC="شريحة9.PNG" ALT="روبوت التنظيف"></a>
-        <span class="product-description">مكنسة كهربائية روبوتيك مع نظام GPS (ضمان 4 سنوات)</span>
-    </td>
-    <td>
-        <a href="شريحة٨.html"><IMG SRC="شريحة8.PNG" ALT="عجانة خليط"></a>
-        <span class="product-description">عجانة خليط "كيكوتيك" مطورة درجة ثاني (ضمان 3 سنوات)</span>
-    </td>
-</tr>
-<tr>
-    <td>
-        <a href="شريحة٣.html"><IMG SRC="شريحة3.PNG" ALT="غلاية شاي"></a>
-        <span class="product-description">غلاي شاي "كينود" درجة أولى (ضمان 5 سنوات)</span>
-    </td>
-    <td>
-        <a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي"></a>
-        <span class="product-description">غسالة "بووش" اتوماتيك باب امامي لون رمادي (ضمان 5 سنوات)</span>
-    </td>
-</tr>
-<tr>
-    <td>
-        <a href="شريحة٥.html"><IMG SRC="شريحة5.PNG" ALT="غسالة لون أبيض"></a>
-        <span class="product-description">غسالة "بووش" اتوماتيك باب امامي لون أبيض (ضمان 5 سنوات)</span>
-    </td>
-    <td>
-        <a href="شريحة١٠.html"><IMG SRC="شريحة10.PNG" ALT="مكنسة كهربائية"></a>
-        <span class="product-description">مكنسة كهربائية كلاسيكية "باناسونيك" (ضمان سنتين)</span>
-    </td>
-</tr>
-<tr>
-    <td>
-        <a href="شريحة١.html"><IMG SRC="شريحة1.PNG" ALT="مكنسة كهربائية"></a>
-        <span class="product-description">مكنسة بشكل عصا طويلة وحديثة "فيليبس" مكنسة فرشاة قصيرة +</span>
-    </td>
-    <td>
-        <a href="شريحة٦.html"><IMG SRC="شريحة6.PNG" ALT="ثلاجة هيتاشي"></a>
-        <span class="product-description">ثلاجة "هيتاشي" حجم كبير '2 ابواب' درجة أولى (ضمان 10 سنوات)</span>
-    </td>
-</tr>
-</table>
-
-<div class="buttons-container">
-    <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
-</div>
-</body>
-</html>

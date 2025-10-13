@@ -40,12 +40,12 @@ body {
 .product-card {
     max-width: 95%;
     width: 700px; 
-    margin: 20px auto; 
+    /* **التعديل الحاسم**: هامش سفلي سالب لتعويض المسافة الزائدة */
+    margin: 20px auto -10px auto; 
     background-color: white;
     border: 3px solid silver;
     border-spacing: 0; 
     border-collapse: collapse; 
-    /* **التعديل هنا**: إزالة الحشو السفلي من الجدول */
     padding: 5px 5px 0 5px; 
     
     display: flex; 
@@ -69,8 +69,7 @@ body {
     justify-content: flex-start; /* دفع المحتوى للأعلى */
     align-items: center; 
     border: 1px solid silver; 
-    /* تقليل الهامش السفلي للخلايا */
-    margin-bottom: -1px; /* تعويض أي هامش داخلي قد يسبب فجوة */
+    margin-bottom: -1px; /* تعويض الفجوات بين الحدود */
 }
 
 /* توحيد صور اللابتوب: تحديد ارتفاع ثابت */
@@ -96,7 +95,8 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    /* زيادة الهامش العلوي لتعويض الهامش السالب للجدول */
+    margin-top: 40px; 
     margin-bottom: 50px;
 }
 .button {
@@ -122,6 +122,7 @@ body {
         border: none;
         padding: 0;
         display: block; 
+        margin: 20px auto; /* إزالة الهامش السالب على الهاتف */
     }
 
     .product-card tr {
@@ -200,37 +201,4 @@ body {
 <tr>
     <td>
         <a href="شريحة٣.html"><IMG SRC="شريحة3.PNG" ALT="غلاية شاي"></a>
-        <span class="product-description">غلاي شاي "كينود" درجة أولى (ضمان 5 سنوات)</span>
-    </td>
-    <td>
-        <a href="شريحة٤.html"><IMG SRC="شريحة4.PNG" ALT="غسالة لون رمادي"></a>
-        <span class="product-description">غسالة "بووش" اتوماتيك باب امامي لون رمادي (ضمان 5 سنوات)</span>
-    </td>
-</tr>
-<tr>
-    <td>
-        <a href="شريحة٥.html"><IMG SRC="شريحة5.PNG" ALT="غسالة لون أبيض"></a>
-        <span class="product-description">غسالة "بووش" اتوماتيك باب امامي لون أبيض (ضمان 5 سنوات)</span>
-    </td>
-    <td>
-        <a href="شريحة١٠.html"><IMG SRC="شريحة10.PNG" ALT="مكنسة كهربائية"></a>
-        <span class="product-description">مكنسة كهربائية كلاسيكية "باناسونيك" (ضمان سنتين)</span>
-    </td>
-</tr>
-<tr>
-    <td>
-        <a href="شريحة١.html"><IMG SRC="شريحة1.PNG" ALT="مكنسة كهربائية"></a>
-        <span class="product-description">مكنسة بشكل عصا طويلة وحديثة "فيليبس" مكنسة فرشاة قصيرة +</span>
-    </td>
-    <td>
-        <a href="شريحة٦.html"><IMG SRC="شريحة6.PNG" ALT="ثلاجة هيتاشي"></a>
-        <span class="product-description">ثلاجة "هيتاشي" حجم كبير '2 ابواب' درجة أولى (ضمان 10 سنوات)</span>
-    </td>
-</tr>
-</table>
-
-<div class="buttons-container">
-    <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
-</div>
-</body>
-</html>
+        <span class="product-description">غلاي شاي "كينود" درجة

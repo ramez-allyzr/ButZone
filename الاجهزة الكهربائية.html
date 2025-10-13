@@ -14,15 +14,15 @@ body {
 }
 /* تنسيق شعار الموقع */
 .logo {
-    height: 125px;
-    width: 175px;
+    height: 250px;
+    width: 350px;
     display: block;
     margin: 0 auto;
 }
 
 /* تنسيق النص الترحيبي */
 .welcome-slogan {
-    font-size: 15px;
+    font-size: 20px;
     color: darkorange;
     font-family: Tahoma;
     display: block;
@@ -30,7 +30,7 @@ body {
 }
 .page-title {
     color: black;
-    font-size: 20px;
+    font-size: 40px;
     font-family: 'DecoType Naskh Variants';
     display: block;
     margin-bottom: 20px;
@@ -43,33 +43,33 @@ body {
     margin: 20px auto; 
     background-color: white;
     border: 3px solid silver;
-    border-spacing: 0; /* مهم لـ Flexbox */
-    border-collapse: collapse; /* مهم لـ Flexbox */
+    border-spacing: 0; 
+    border-collapse: collapse; 
     padding: 5px;
     
-    /* **التعديل لضمان عرض عمودين على اللابتوب** */
+    /* لضمان عرض عمودين على اللابتوب */
     display: flex; 
-    flex-direction: column; /* الترتيب العام للصفوف */
+    flex-direction: column; 
 }
 
-/* **التعديل لضمان عرض عمودين على اللابتوب** */
 .product-card tr {
-    display: flex; /* يجعل الصف حاوية مرنة */
+    display: flex; 
     width: 100%; 
 }
 
-/* توحيد ارتفاع الخلايا وعرضها على اللابتوب */
+/* **حل مشكلة المسافة أسفل الصورة على اللابتوب** وتوحيد الارتفاع */
 .product-card td, .product-card th {
-    width: 50%; /* كل خلية تأخذ نصف العرض */
+    width: 50%; 
     box-sizing: border-box;
     text-align: center;
     padding: 10px;
     min-height: 450px; 
     display: flex; 
     flex-direction: column; 
-    justify-content: space-between; 
+    /* **التعديل**: دفع المحتوى إلى الأعلى لإزالة المسافة من أسفل الصورة */
+    justify-content: flex-start; 
     align-items: center; 
-    border: 1px solid silver; /* إضافة الحدود هنا بدلاً من الجدول */
+    border: 1px solid silver; 
 }
 
 /* توحيد صور اللابتوب: تحديد ارتفاع ثابت */
@@ -88,7 +88,7 @@ body {
     font-size: 20px;
     font-family: Arial;
     display: block;
-    margin-top: 1px;
+    margin-top: 5px;
 }
 
 .buttons-container {
@@ -100,12 +100,12 @@ body {
 }
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #FF0000;
     Color: white;
     Text-decoration: none;
     Border-radius: 30px;
-    Font-size: 15px;
+    Font-size: 25px;
     Font-weight: bold;
     Transition: background-color 0.3s ease;
 }
@@ -120,15 +120,15 @@ body {
         max-width: 100%;
         border: none;
         padding: 0;
-        display: block; /* إلغاء Flexbox على الجدول */
+        display: block; 
     }
 
     .product-card tr {
-        display: table-row; /* العودة إلى سلوك الصف التقليدي */
+        display: table-row; 
         width: 100%;
     }
 
-    /* **إجبار الهاتف على عرض عمودين باستخدام الجدول التقليدي** */
+    /* إجبار الهاتف على عرض عمودين باستخدام الجدول التقليدي */
     .product-card th, .product-card td {
         width: 50%; 
         display: table-cell; 
@@ -170,8 +170,7 @@ body {
 
 <img src="الشعار بدون خلفية.png" alt="BuyZone" class="logo">
 
-<span class="welcome-slogan">سرعةٌ في التوصيل ... وجودةٌ في المنتج<br>
-___________________________</span>
+<span class="welcome-slogan">سرعةٌ في التوصيل ... وجودةٌ في المنتج</span>
 <hr style="width: 30%; border: 1px solid darkorange; margin-top: -10px;">
 
 <span class="page-title">مرحباً بكم في صفحة الاجهزة الكهربائية</span>

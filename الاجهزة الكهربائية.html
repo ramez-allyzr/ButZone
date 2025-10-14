@@ -40,7 +40,6 @@ body {
 .product-card {
     max-width: 95%;
     width: 700px; 
-    /* **التعديل الحاسم**: هامش سفلي سالب لتعويض المسافة الزائدة */
     margin: 20px auto -10px auto; 
     background-color: white;
     border: 3px solid silver;
@@ -66,18 +65,20 @@ body {
     min-height: 450px; 
     display: flex; 
     flex-direction: column; 
-    justify-content: flex-start; /* دفع المحتوى للأعلى */
+    /* لا نحتاج لـ justify-content: flex-start; هنا، سيعتمد على margin-auto */
     align-items: center; 
     border: 1px solid silver; 
-    margin-bottom: -1px; /* تعويض الفجوات بين الحدود */
+    margin-bottom: -1px; 
 }
 
-/* توحيد صور اللابتوب: تحديد ارتفاع ثابت */
+/* توحيد صور اللابتوب: تحديد ارتفاع ثابت وإزالة المسافة أسفلها */
 .product-card img {
     max-width: 90%; 
     height: 300px; 
     display: block;
-    margin: 10px auto;
+    /* **التعديل الحاسم**: يدفع النص إلى الأسفل */
+    margin: 10px auto 0 auto; 
+    margin-bottom: auto; 
     object-fit: contain; 
     flex-shrink: 0;
 }
@@ -88,14 +89,14 @@ body {
     font-size: 20px;
     font-family: Arial;
     display: block;
-    margin-top: 5px;
+    margin-top: 0; /* إزالة الهامش العلوي */
+    padding-bottom: 5px; 
 }
 
 .buttons-container {
     display: flex;
     gap: 20px;
     justify-content: center;
-    /* زيادة الهامش العلوي لتعويض الهامش السالب للجدول */
     margin-top: 40px; 
     margin-bottom: 50px;
 }
@@ -122,7 +123,7 @@ body {
         border: none;
         padding: 0;
         display: block; 
-        margin: 20px auto; /* إزالة الهامش السالب على الهاتف */
+        margin: 20px auto; 
     }
 
     .product-card tr {
@@ -148,13 +149,14 @@ body {
     .product-card img {
         height: auto; 
         max-width: 95%; 
-        margin: 5px auto;
+        margin: 5px auto 0 auto; /* إزالة margin-bottom: auto من الهاتف */
     }
 
     .product-description {
         font-size: 12px; 
         line-height: 1.2; 
         padding: 0 2px 5px 2px; 
+        margin-top: 0;
     }
     
     .page-title {

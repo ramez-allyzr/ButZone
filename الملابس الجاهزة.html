@@ -5,28 +5,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    
+/* 1. التوسيط العام والأساسي */
 body {
-text-align: center;}
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+    text-align: center; 
+}
+/* 2. تحسين عرض الأزرار */
 .buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto; /* إضافة margin لتبدو أفضل */
 }
 .button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #a97142;
-Color: white;
-Text-decoration: none;
-Border-radius: 30px;
-Font-size: 25px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #FF0000;}
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #a97142;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.button:hover{background-color: #FF0000;}
+
+/* 3. تنسيق جديد للبطاقات باستخدام Flexbox */
+/* الحاوية الرئيسية للعناصر (ستحل محل <table>) */
+.products-grid {
+    display: flex; /* تفعيل Flexbox */
+    flex-wrap: wrap; /* السماح للعناصر بالنزول لسطر جديد */
+    justify-content: center; /* توسيط العناصر داخل الشبكة */
+    gap: 20px; /* مسافة بين العناصر */
+    width: 90%;
+    max-width: 1200px; /* تحديد أقصى عرض للشبكة */
+    margin: 20px auto; /* توسيط الشبكة نفسها */
+}
+
+/* تنسيق كل بطاقة منتج (ستحل محل <th> و <td>) */
+.product-card {
+    background-color: white;
+    border: 3px solid silver;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box; /* للتأكد من أن الحدود والحشوات لا تزيد العرض الكلي */
+    text-align: center;
+    
+    /* جعل كل بطاقة تأخذ نصف عرض الحاوية على الشاشات الكبيرة */
+    width: calc(50% - 10px); 
+    min-width: 300px; /* حد أدنى للعرض لضمان القراءة */
+    
+    /* ميديا كويري: على شاشات الهاتف الصغيرة، اجعل كل بطاقة بعرض 100% */
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+}
+
+.product-card a {
+    text-decoration: none; /* إزالة خطوط الروابط */
+    display: block; /* لجعل الرابط يملأ كامل مساحة البطاقة */
+}
+.product-card img {
+    /* تم إزالة align="center" القديمة */
+    display: block; 
+    margin: 0 auto 10px; /* توسيط الصورة داخليًا */
+    max-width: 100%; 
+    height: auto;
+}
+.product-card p {
+    margin-top: 10px;
+}
+/* الخطوط القديمة */
+FONT {
+    display: block; /* لضمان أخذ السطر كاملاً */
+    color: red; 
+    font-size: 4; 
+    font-family: Arial;
+}
 </style>
 </head>
 <body bgcolor="beige" style="background-image:url('الخلفية.jpeg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
@@ -36,64 +90,98 @@ Transition: background-color 0.3s ease;}
 _______________________________________<p></font>
 <font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الملابس الجاهزة </font><p>
 
-<table bgcolor="white" border="3" bordercolor="silver" style="margin: 0 auto;" width="90%" cellspacing="4" cellpadding="1">
-<pre><tr>
-<th><a href="صورة 1.html"><IMG SRC="صورة 1.PNG" ALT="ملابس جاهزة" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح
-وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي</a>
+<div class="products-grid">
 
-</th>
-<th><a href="صورة 2.html"><IMG SRC="صورة 2.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كاجوال أنيق. يتكون من قميص رمادي غامق
- وبنطلون بلون بيج مائل للزيتوني، يكمل الإطلالة
-بحذاء رياضي أبيض</a></th>
-</tr>
-<tr>
-<td><a href="صورة 3.html"><IMG SRC="صورة 3.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي أنيق وهادئ. يتكون من قميص وردي مائل للبني
-وبنطلون بيج فاتح يكتمل الطقم بحذاء رياضي أبيض</a>
+    <div class="product-card">
+        <a href="صورة 1.html">
+            <IMG SRC="صورة 1.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">،طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح
+            وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي</FONT>
+        </a>
+    </div>
 
-</td>
-<td><a href="صورة 4.html"><IMG SRC="صورة 4.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">.طقم أنيق وعصري يجمع بين جاكيت أسود بأزرار بيضاء
-مع قميص داخلي أبيض وبنطلون بيج فاتح، ويكمل
-الطقم بحذاء لوفر أسود</a></td>
-</tr>
-<tr>
-<td><a href="صورة 5.html"><IMG SRC="صورة 5.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم رجالي أحادي اللون بالكامل. باللون الرمادي الداكن
-المائل للأسود، يتألف من قميص بأكمام طويلة
-وجيوب على الصدر، وبنطلون رسمي، وحذاء لوفر أسود</a>
-</td>
-<td><a href="صورة 6.html"><IMG SRC="صورة 6.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجوال ومريح. يتكون من قميص بولو بني 
-مع ياقة بيج وبنطلون بيج فاتح بخصر مرن، ويكمل
-الطقم حذاء رياضي متعدد الألوان (بيج وبني وأخضر)</a></td>
-</tr>
-<tr>
-<td><a href="صورة 7.html"><IMG SRC="صورة 7.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجول الذهبي. يتكون من قميص أصفر فاتح
-.مع قميص داخلي أبيض،وبنطلون أخضر زيتوني داكن
-يكمل الإطلالة حذاء رياضي أبيض</a></td>
-<td><a href="صورة 8.html"><IMG SRC="صورة 8.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كلاسيكي وأنيق. يتكون من قميص أبيض
- وبنطلون كحلي داكن، وحذاء رياضي أبيض</a></td>
-</tr>
-<tr>
-<td><a href="صورة 9.html"><IMG SRC="صورة 9.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون 
-جينز أبيض، وحذاء رياضي أبيض</a>
-</td>
-<td><a href="صورة 10.html"><IMG SRC="صورة 10.PNG" ALT="ملابس جاهزة" align="center" style="max-width: 100%; height: auto;"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي عصري وجريء. يتكون من قميص بولو
-أخضر فاتح مخطط بخطوط طولية، وبنطلون أسود واسع
-الساق. ويكتمل الطقم بحذاء رياضي أبيض بنعل برتقالي</a></td>
-</tr>
+    <div class="product-card">
+        <a href="صورة 2.html">
+            <IMG SRC="صورة 2.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كاجوال أنيق. يتكون من قميص رمادي غامق
+             وبنطلون بلون بيج مائل للزيتوني، يكمل الإطلالة
+            بحذاء رياضي أبيض</FONT>
+        </a>
+    </div>
 
-</table><p>
+    <div class="product-card">
+        <a href="صورة 3.html">
+            <IMG SRC="صورة 3.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي أنيق وهادئ. يتكون من قميص وردي مائل للبني
+            وبنطلون بيج فاتح يكتمل الطقم بحذاء رياضي أبيض</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 4.html">
+            <IMG SRC="صورة 4.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">.طقم أنيق وعصري يجمع بين جاكيت أسود بأزرار بيضاء
+            مع قميص داخلي أبيض وبنطلون بيج فاتح، ويكمل
+            الطقم بحذاء لوفر أسود</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 5.html">
+            <IMG SRC="صورة 5.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">طقم رجالي أحادي اللون بالكامل. باللون الرمادي الداكن
+            المائل للأسود، يتألف من قميص بأكمام طويلة
+            وجيوب على الصدر، وبنطلون رسمي، وحذاء لوفر أسود</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 6.html">
+            <IMG SRC="صورة 6.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجوال ومريح. يتكون من قميص بولو بني 
+            مع ياقة بيج وبنطلون بيج فاتح بخصر مرن، ويكمل
+            الطقم حذاء رياضي متعدد الألوان (بيج وبني وأخضر)</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 7.html">
+            <IMG SRC="صورة 7.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجول الذهبي. يتكون من قميص أصفر فاتح
+            .مع قميص داخلي أبيض،وبنطلون أخضر زيتوني داكن
+            يكمل الإطلالة حذاء رياضي أبيض</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 8.html">
+            <IMG SRC="صورة 8.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كلاسيكي وأنيق. يتكون من قميص أبيض
+             وبنطلون كحلي داكن، وحذاء رياضي أبيض</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 9.html">
+            <IMG SRC="صورة 9.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون 
+            جينز أبيض، وحذاء رياضي أبيض</FONT>
+        </a>
+    </div>
+
+    <div class="product-card">
+        <a href="صورة 10.html">
+            <IMG SRC="صورة 10.PNG" ALT="ملابس جاهزة">
+            <FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي عصري وجريء. يتكون من قميص بولو
+            أخضر فاتح مخطط بخطوط طولية، وبنطلون أسود واسع
+            الساق. ويكتمل الطقم بحذاء رياضي أبيض بنعل برتقالي</FONT>
+        </a>
+    </div>
+
+</div>
+
 <div class="buttons-container">
 <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
-</div><p>
-</pre>
+</div>
 </body>
 </html>

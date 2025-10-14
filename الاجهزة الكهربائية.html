@@ -41,8 +41,8 @@ body {
     max-width: 95%;
     width: 700px; 
     margin: 20px auto 0 auto; 
-    background-color: white;
-    border: none; 
+    background-color: transparent; /* جعل خلفية الجدول شفافة لإظهار الفراغات */
+    border: none; /* إزالة الحدود الخارجية للجدول */
     border-spacing: 0; 
     border-collapse: collapse; 
     padding: 0; 
@@ -54,6 +54,13 @@ body {
 .product-card tr {
     display: flex; 
     width: 100%; 
+    /* **التعديل الحاسم (2)**: إضافة مسافة 20px بين الأعمدة (الخلايا) */
+    gap: 20px; 
+    /* **التعديل الحاسم (2)**: إضافة مسافة 20px بين الصفوف */
+    margin-bottom: 20px; 
+}
+.product-card tr:last-child {
+    margin-bottom: 0; /* إزالة المسافة بعد الصف الأخير */
 }
 
 /* توحيد ارتفاع الخلايا وعرضها على اللابتوب */
@@ -61,26 +68,28 @@ body {
     width: 50%; 
     box-sizing: border-box;
     text-align: center;
-    /* **التعديل**: حشو بسيط لضمان المسافة عن الحدود الخارجية */
-    padding: 2px; 
+    /* **التعديل (1)**: إزالة الحشو الداخلي لتمكين الصورة من ملء العرض */
+    padding: 0; 
     min-height: unset; 
+    background-color: white; /* إعادة الخلفية البيضاء إلى الخلايا الفردية */
     
     display: flex; 
     flex-direction: column; 
     justify-content: flex-start; 
     align-items: center; 
-    border: 1px solid silver; 
+    /* **التعديل (2)**: الحدود تكون على الخلايا الفردية الآن */
+    border: 3px solid silver; 
     margin-bottom: 0; 
 }
 
 /* توحيد صور اللابتوب: تحديد ارتفاع ثابت وتكبير العرض لأقصى حد */
 .product-card img {
-    /* **التعديل الحاسم**: السماح للصورة بالوصول إلى أقصى عرض */
+    /* **التعديل الحاسم (1)**: السماح للصورة بالوصول إلى أقصى عرض */
     max-width: 100%; 
     height: 250px; 
     display: block;
-    /* **التعديل**: إزالة الهوامش حول الصورة */
-    margin: 0 auto; 
+    /* **التعديل (1)**: إزالة الهوامش لتلتصق الصورة بالحدود */
+    margin: 0; 
     object-fit: contain; 
     flex-shrink: 0;
 }
@@ -92,8 +101,8 @@ body {
     font-family: Arial;
     display: block;
     margin-top: 0; 
-    /* **التعديل**: تقليل الحشو لتقريب النص من الحدود السفلية */
-    padding: 5px 5px 5px 5px; 
+    /* **التعديل**: إضافة حشو لترك مسافة حول النص (10 بكسل) */
+    padding: 10px; 
 }
 
 .buttons-container {
@@ -132,9 +141,10 @@ body {
     .product-card tr {
         display: table-row; 
         width: 100%;
+        gap: 0; /* إلغاء الـ gap على الهاتف */
+        margin-bottom: 0; /* إلغاء المسافة بين الصفوف على الهاتف */
     }
 
-    /* إجبار الهاتف على عرض عمودين باستخدام الجدول التقليدي (تم ضبطه سابقاً) */
     .product-card th, .product-card td {
         width: 50%; 
         display: table-cell; 
@@ -143,15 +153,13 @@ body {
         border: 1px solid silver; 
         box-sizing: border-box;
         min-height: unset; 
-        
-        /* توسيط المحتوى العادي */
         text-align: center;
         vertical-align: top;
     }
     
     .product-card img {
         height: auto; 
-        max-width: 95%; /* إبقاء max-width هنا لضمان عدم خروجها عن الحدود */
+        max-width: 95%; 
         margin: 5px auto 0 auto; 
     }
 

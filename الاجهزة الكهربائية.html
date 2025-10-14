@@ -40,13 +40,12 @@ body {
 .product-card {
     max-width: 95%;
     width: 700px; 
-    margin: 20px auto 0 auto; /* تقليل الهامش السفلي */
+    margin: 20px auto 0 auto; 
     background-color: white;
-    /* **التعديل**: إزالة الحدود الخارجية للجدول الأب */
-    border: none; 
+    border: none; /* إزالة الحدود الخارجية */
     border-spacing: 0; 
     border-collapse: collapse; 
-    padding: 0; 
+    padding: 0; /* إزالة حشو الجدول الأب */
     
     display: flex; 
     flex-direction: column; 
@@ -62,27 +61,26 @@ body {
     width: 50%; 
     box-sizing: border-box;
     text-align: center;
-    /* **التعديل**: تقليل الحشو لتقريب المحتوى من الحدود (1 سم تقريباً) */
-    padding: 5px; 
-    /* **التعديل**: تقليل الارتفاع الأدنى لتقليل المسافة السفلية */
-    min-height: 400px; 
+    /* **التعديل الحاسم**: إزالة الحشو الداخلي والخلفي */
+    padding: 0; 
+    /* **التعديل الحاسم**: إزالة min-height */
+    min-height: unset; 
+    
     display: flex; 
     flex-direction: column; 
-    /* إعادة space-between لضمان أن النص يصل إلى الأسفل مع الـ min-height */
-    justify-content: space-between; 
+    /* دفع المحتوى إلى الأعلى */
+    justify-content: flex-start; 
     align-items: center; 
-    /* **التعديل**: تطبيق الحدود على الخلايا الفردية فقط */
     border: 1px solid silver; 
     margin-bottom: 0; 
 }
 
-/* توحيد صور اللابتوب: تحديد ارتفاع ثابت وإزالة المسافة أسفلها */
+/* توحيد صور اللابتوب: تحديد ارتفاع ثابت والتحكم في الهوامش */
 .product-card img {
     max-width: 90%; 
-    height: 250px; /* **التعديل**: تقليل ارتفاع الصورة لتناسب الـ 400px */
+    height: 250px; 
     display: block;
-    /* استخدام هوامش عادية أو إزالة هوامش الصورة */
-    margin: 5px auto; 
+    margin: 5px auto; /* هامش بسيط حول الصورة */
     object-fit: contain; 
     flex-shrink: 0;
 }
@@ -93,16 +91,16 @@ body {
     font-size: 20px;
     font-family: Arial;
     display: block;
-    /* إزالة الهامش العلوي */
     margin-top: 0; 
-    padding-bottom: 0; /* إزالة أي حشو سفلي */
+    /* **التعديل**: التحكم بالمسافة عن طريق الحشو حول النص */
+    padding: 5px 10px 10px 10px; /* حشو علوي 5، جانبي 10، وسفلي 10 */
 }
 
 .buttons-container {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 20px; /* تقليل الهامش العلوي */
+    margin-top: 20px; 
     margin-bottom: 50px;
 }
 .button {
@@ -125,7 +123,7 @@ body {
     .product-card {
         width: 100%; 
         max-width: 100%;
-        margin: 20px auto; /* إزالة الهامش السالب على الهاتف */
+        margin: 20px auto; 
         border: none;
         padding: 0;
         display: block; 

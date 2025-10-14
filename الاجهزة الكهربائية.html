@@ -40,12 +40,13 @@ body {
 .product-card {
     max-width: 95%;
     width: 700px; 
-    margin: 20px auto -10px auto; 
+    margin: 20px auto 0 auto; /* تقليل الهامش السفلي */
     background-color: white;
-    border: 3px solid silver;
+    /* **التعديل**: إزالة الحدود الخارجية للجدول الأب */
+    border: none; 
     border-spacing: 0; 
     border-collapse: collapse; 
-    padding: 5px 5px 0 5px; 
+    padding: 0; 
     
     display: flex; 
     flex-direction: column; 
@@ -61,24 +62,27 @@ body {
     width: 50%; 
     box-sizing: border-box;
     text-align: center;
-    padding: 10px;
-    min-height: 450px; 
+    /* **التعديل**: تقليل الحشو لتقريب المحتوى من الحدود (1 سم تقريباً) */
+    padding: 5px; 
+    /* **التعديل**: تقليل الارتفاع الأدنى لتقليل المسافة السفلية */
+    min-height: 400px; 
     display: flex; 
     flex-direction: column; 
-    /* لا نحتاج لـ justify-content: flex-start; هنا، سيعتمد على margin-auto */
+    /* إعادة space-between لضمان أن النص يصل إلى الأسفل مع الـ min-height */
+    justify-content: space-between; 
     align-items: center; 
+    /* **التعديل**: تطبيق الحدود على الخلايا الفردية فقط */
     border: 1px solid silver; 
-    margin-bottom: -1px; 
+    margin-bottom: 0; 
 }
 
 /* توحيد صور اللابتوب: تحديد ارتفاع ثابت وإزالة المسافة أسفلها */
 .product-card img {
     max-width: 90%; 
-    height: 300px; 
+    height: 250px; /* **التعديل**: تقليل ارتفاع الصورة لتناسب الـ 400px */
     display: block;
-    /* **التعديل الحاسم**: يدفع النص إلى الأسفل */
-    margin: 10px auto 0 auto; 
-    margin-bottom: auto; 
+    /* استخدام هوامش عادية أو إزالة هوامش الصورة */
+    margin: 5px auto; 
     object-fit: contain; 
     flex-shrink: 0;
 }
@@ -89,15 +93,16 @@ body {
     font-size: 20px;
     font-family: Arial;
     display: block;
-    margin-top: 0; /* إزالة الهامش العلوي */
-    padding-bottom: 5px; 
+    /* إزالة الهامش العلوي */
+    margin-top: 0; 
+    padding-bottom: 0; /* إزالة أي حشو سفلي */
 }
 
 .buttons-container {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 40px; 
+    margin-top: 20px; /* تقليل الهامش العلوي */
     margin-bottom: 50px;
 }
 .button {
@@ -120,10 +125,10 @@ body {
     .product-card {
         width: 100%; 
         max-width: 100%;
+        margin: 20px auto; /* إزالة الهامش السالب على الهاتف */
         border: none;
         padding: 0;
         display: block; 
-        margin: 20px auto; 
     }
 
     .product-card tr {
@@ -131,7 +136,7 @@ body {
         width: 100%;
     }
 
-    /* إجبار الهاتف على عرض عمودين باستخدام الجدول التقليدي */
+    /* إجبار الهاتف على عرض عمودين باستخدام الجدول التقليدي (تم ضبطه سابقاً) */
     .product-card th, .product-card td {
         width: 50%; 
         display: table-cell; 
@@ -149,7 +154,7 @@ body {
     .product-card img {
         height: auto; 
         max-width: 95%; 
-        margin: 5px auto 0 auto; /* إزالة margin-bottom: auto من الهاتف */
+        margin: 5px auto 0 auto; 
     }
 
     .product-description {
@@ -237,4 +242,3 @@ body {
 </div>
 </body>
 </html>
-

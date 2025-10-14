@@ -1,95 +1,211 @@
 <!DOCTYPE html>
+<html>
 <head>
 <title>الملابس الجاهزة</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+/* ملاحظة: لقد قمت بتنسيق كود CSS قليلاً لتوضيح القواعد، 
+   لكنني لم أغير قيم الخصائص الموجودة. 
+*/
+Body {
+    /* تم حذف Body هنا لأنه لا يحتوي على خصائص، وتم دمجه مع التنسيقات الأخرى */
+}
+
+.container {
+    text-align: center;
+}
+
+H1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
 .buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    /* التعديل الثاني: إضافة خاصية التفاف الأزرار لكي لا تخرج عن الشاشة في الهواتف */
+    flex-wrap: wrap; 
+}
+
 .button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #FF0000;
-Color: white;
-Text-decoration: none;
-Border-radius: 30px;
-Font-size: 25px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #a97142;}
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    /* التعديل الثالث: جعل الحد الأقصى للعرض مرنًا لضمان التوافق مع الشاشات الصغيرة */
+    max-width: 100%; 
+    box-sizing: border-box; /* لضمان أن الـ padding لا يزيد العرض الكلي */
+}
+
+.button:hover {
+    background-color: #a97142;
+}
+
+/* ------------------------------------------------ */
+/* التعديل الرابع: إضافة قاعدة لجعل الصور داخل الجدول متجاوبة */
+table img {
+    /* جعل أقصى عرض للصورة 100% من الحاوية التي تحتويها (خلية الجدول) */
+    max-width: 100%; 
+    height: auto; /* للحفاظ على نسب الصورة عند تغيير العرض */
+    /* خصائص الصورة التي كانت موجودة سابقًا في وسم <img> وتم نقلها هنا لتطبيقها على جميع صور المنتجات */
+    display: block; 
+    margin: 0 auto; 
+}
+
+/* التعديل الخامس: تطبيق التجاوب على الجدول نفسه */
+table {
+    /* تم تغيير العرض من 400 بكسل ثابت إلى نسبة مئوية مرنة */
+    width: 95% !important; 
+    /* تم تغيير الارتفاع من 1000 بكسل ثابت إلى "تلقائي" */
+    height: auto !important; 
+    /* جعل الحد الأقصى للعرض 600 بكسل للحفاظ على التصميم على الشاشات الكبيرة */
+    max-width: 600px; 
+    
+    /* الخصائص الأخرى التي لم يتم تغييرها */
+    background-color: white;
+    border: 3px solid silver;
+    border-collapse: separate;
+    border-spacing: 3px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* التعديل السادس: إضافة استعلام وسائط لتغيير طريقة عرض الخلايا على شاشات الهاتف */
+@media (max-width: 500px) {
+    /* على الشاشات الصغيرة جداً، اجعل كل خلية في الجدول تشغل عرضاً كاملاً */
+    table tr {
+        display: block; /* لجعل الصف يأخذ عرضاً كاملاً */
+    }
+    table th, table td {
+        display: block; /* لجعل كل عمود (خلية) يأخذ عرضاً كاملاً ويأتي أسفل الخلية التي تسبقه */
+        width: 100% !important; /* تأكد من أنه يأخذ العرض بالكامل */
+        box-sizing: border-box;
+        border: none; /* إزالة الحدود الداخلية بين الخلايا على الشاشات الصغيرة للحصول على مظهر قائمة */
+    }
+}
+
+
+/* ------------------------------------------------ */
+/* تنسيق العناصر القديمة المضمنة */
+/* يجب دائمًا استخدام الـ Meta Tag ووحدات القياس المرنة لضمان أفضل تجاوب، خاصةً مع استخدام وسم <pre> و <font> القديم */
+
+/* جعل النص الترحيبي الكبير متجاوباً */
+body center > font[size="25"] {
+    font-size: 8vw !important; /* استخدام وحدة قياس مرنة */
+    white-space: normal !important; /* لضمان التفاف النص وعدم خروجه عن الشاشة */
+}
+
+/* جعل النصوص داخل الجدول متجاوبة */
+body table font[size="4"] {
+    font-size: 4vw !important; /* استخدام وحدة قياس مرنة للخط */
+    line-height: 1.4;
+}
+
 </style>
 </head>
 <body bgcolor="beige" style="background-image:url('خلفية صفحة الملابس.jpeg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-<center><img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
-
-<b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
-_______________________________________<p></font>
-<font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الملابس الجاهزة </font><p>
-<table bgcolor="white" border="3" bordercolor="silver" align="center" height="1000" width="400" cellspacing="3" cellpadding="5">
-<center><tr>
-<th><a href="صورة 1.html"><IMG SRC="صورة 1.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح
-وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي</a>
-
-</th>
-<th><a href="صورة 2.html"><IMG SRC="صورة 2.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كاجوال أنيق. يتكون من قميص رمادي غامق
- وبنطلون بلون بيج مائل للزيتوني، يكمل الإطلالة
-بحذاء رياضي أبيض</a></th>
-</tr>
-<tr>
-<td><center><a href="صورة 3.html"><IMG SRC="صورة 3.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي أنيق وهادئ. يتكون من قميص وردي مائل للبني
-وبنطلون بيج فاتح يكتمل الطقم بحذاء رياضي أبيض</a>
-
-</td>
-<td><center><a href="صورة 4.html"><IMG SRC="صورة 4.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">.طقم أنيق وعصري يجمع بين جاكيت أسود بأزرار بيضاء
-مع قميص داخلي أبيض وبنطلون بيج فاتح، ويكمل
-الطقم بحذاء لوفر أسود</a></td>
-</tr>
-<tr>
-<td><center><a href="صورة 5.html"><IMG SRC="صورة 5.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم رجالي أحادي اللون بالكامل. باللون الرمادي الداكن
-المائل للأسود، يتألف من قميص بأكمام طويلة
-وجيوب على الصدر، وبنطلون رسمي، وحذاء لوفر أسود</a>
-</td>
-<td><center><a href="صورة 6.html"><IMG SRC="صورة 6.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجوال ومريح. يتكون من قميص بولو بني 
-مع ياقة بيج وبنطلون بيج فاتح بخصر مرن، ويكمل
-الطقم حذاء رياضي متعدد الألوان (بيج وبني وأخضر)</a></td>
-</tr>
-<tr>
-<td><center><a href="صورة 7.html"><IMG SRC="صورة 7.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجول الذهبي. يتكون من قميص أصفر فاتح
-.مع قميص داخلي أبيض،وبنطلون أخضر زيتوني داكن
-يكمل الإطلالة حذاء رياضي أبيض</a></td>
-<td><center><a href="صورة 8.html"><IMG SRC="صورة 8.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كلاسيكي وأنيق. يتكون من قميص أبيض
- وبنطلون كحلي داكن، وحذاء رياضي أبيض</a>
-
-</td>
-</tr>
-<tr>
-<td><center><a href="صورة 9.html"><IMG SRC="صورة 9.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون 
-جينز أبيض، وحذاء رياضي أبيض</a>
-
-</td>
-<td><center><a href="صورة 10.html"><IMG SRC="صورة 10.PNG" ALT="ملابس جاهزة" align="center"><p>
-<FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي عصري وجريء. يتكون من قميص بولو
-أخضر فاتح مخطط بخطوط طولية، وبنطلون أسود واسع
-الساق. ويكتمل الطقم بحذاء رياضي أبيض بنعل برتقالي</a></td>
-</tr>
-
-</table><p>
-<div class="buttons-container">
-<a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
-</div><p>
+<center>
+    <img src="الشعار بدون خلفية.png" alt="BuyZone" style="max-width: 80%; height: auto; display: block; margin: 0 auto 20px;">
+    <br>
+    
+    <b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
+    _______________________________________<p></font>
+    <font color="black" SIZE="25" face="DecoType Naskh Variants">مرحباً بكم في صفحة الملابس الجاهزة </font><p>
+    
+    <table bgcolor="white" border="3" bordercolor="silver" align="center" cellspacing="3" cellpadding="5">
+    <center>
+        <tr>
+            <th>
+                <a href="صورة 1.html">
+                    <IMG SRC="صورة 1.PNG" ALT="ملابس جاهزة" align="center"><p>
+                    <FONT color="red" SIZE="4" FACE="ARIAL">،طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي</FONT>
+                </a>
+            </th>
+            <th>
+                <a href="صورة 2.html">
+                    <IMG SRC="صورة 2.PNG" ALT="ملابس جاهزة" align="center"><p>
+                    <FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كاجوال أنيق. يتكون من قميص رمادي غامق وبنطلون بلون بيج مائل للزيتوني، يكمل الإطلالة بحذاء رياضي أبيض</FONT>
+                </a>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <center>
+                    <a href="صورة 3.html">
+                        <IMG SRC="صورة 3.PNG" ALT="ملابس جاهزة" align="center"><p>
+                        <FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي أنيق وهادئ. يتكون من قميص وردي مائل للبني وبنطلون بيج فاتح يكتمل الطقم بحذاء رياضي أبيض</FONT>
+                    </a>
+                </td>
+                <td>
+                    <center>
+                        <a href="صورة 4.html">
+                            <IMG SRC="صورة 4.PNG" ALT="ملابس جاهزة" align="center"><p>
+                            <FONT color="red" SIZE="4" FACE="ARIAL">.طقم أنيق وعصري يجمع بين جاكيت أسود بأزرار بيضاء مع قميص داخلي أبيض وبنطلون بيج فاتح، ويكمل الطقم بحذاء لوفر أسود</FONT>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>
+                            <a href="صورة 5.html">
+                                <IMG SRC="صورة 5.PNG" ALT="ملابس جاهزة" align="center"><p>
+                                <FONT color="red" SIZE="4" FACE="ARIAL">طقم رجالي أحادي اللون بالكامل. باللون الرمادي الداكن المائل للأسود، يتألف من قميص بأكمام طويلة وجيوب على الصدر، وبنطلون رسمي، وحذاء لوفر أسود</FONT>
+                            </a>
+                        </td>
+                        <td>
+                            <center>
+                                <a href="صورة 6.html">
+                                    <IMG SRC="صورة 6.PNG" ALT="ملابس جاهزة" align="center"><p>
+                                    <FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجوال ومريح. يتكون من قميص بولو بني مع ياقة بيج وبنطلون بيج فاتح بخصر مرن، ويكمل الطقم حذاء رياضي متعدد الألوان (بيج وبني وأخضر)</FONT>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
+                                    <a href="صورة 7.html">
+                                        <IMG SRC="صورة 7.PNG" ALT="ملابس جاهزة" align="center"><p>
+                                        <FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي كاجول الذهبي. يتكون من قميص أصفر فاتح .مع قميص داخلي أبيض،وبنطلون أخضر زيتوني داكن يكمل الإطلالة حذاء رياضي أبيض</FONT>
+                                    </a>
+                                </td>
+                                <td>
+                                    <center>
+                                        <a href="صورة 8.html">
+                                            <IMG SRC="صورة 8.PNG" ALT="ملابس جاهزة" align="center"><p>
+                                            <FONT color="red" SIZE="4" FACE="ARIAL">،طقم شبابي كلاسيكي وأنيق. يتكون من قميص أبيض وبنطلون كحلي داكن، وحذاء رياضي أبيض</FONT>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <center>
+                                            <a href="صورة 9.html">
+                                                <IMG SRC="صورة 9.PNG" ALT="ملابس جاهزة" align="center"><p>
+                                                <FONT color="red" SIZE="4" FACE="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون جينز أبيض، وحذاء رياضي أبيض</FONT>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <center>
+                                                <a href="صورة 10.html">
+                                                    <IMG SRC="صورة 10.PNG" ALT="ملابس جاهزة" align="center"><p>
+                                                    <FONT color="red" SIZE="4" FACE="ARIAL">طقم شبابي عصري وجريء. يتكون من قميص بولو أخضر فاتح مخطط بخطوط طولية، وبنطلون أسود واسع الساق. ويكتمل الطقم بحذاء رياضي أبيض بنعل برتقالي</FONT>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table><p>
+                                    
+                                    <div class="buttons-container">
+                                        <a href="موقع buyzone.html" class="button">العودة الى صفحة الموقع الرسمية</a>
+                                    </div><p>
+                                    
+                                    </center>
 </body>
 </html>

@@ -40,27 +40,24 @@ body {
 .product-card {
     max-width: 95%;
     width: 700px; 
-    margin: 20px auto 0 auto; 
-    background-color: transparent; /* جعل خلفية الجدول شفافة لإظهار الفراغات */
-    border: none; /* إزالة الحدود الخارجية للجدول */
-    border-spacing: 0; 
-    border-collapse: collapse; 
+    margin: 20px auto; 
+    background-color: transparent; /* خلفية شفافة للفراغات */
+    border: none;
+    /* **التعديل**: إنشاء تباعد بين الخلايا بمقدار 10px */
+    border-spacing: 10px; 
+    border-collapse: separate; 
     padding: 0; 
     
-    display: flex; 
-    flex-direction: column; 
+    /* العودة إلى وضع عرض الجدول التقليدي */
+    display: table; 
 }
 
 .product-card tr {
-    display: flex; 
+    /* العودة إلى وضع عرض الجدول التقليدي */
+    display: table-row; 
     width: 100%; 
-    /* **التعديل الحاسم (2)**: إضافة مسافة 20px بين الأعمدة (الخلايا) */
-    gap: 20px; 
-    /* **التعديل الحاسم (2)**: إضافة مسافة 20px بين الصفوف */
-    margin-bottom: 20px; 
-}
-.product-card tr:last-child {
-    margin-bottom: 0; /* إزالة المسافة بعد الصف الأخير */
+    gap: 0;
+    margin-bottom: 0; 
 }
 
 /* توحيد ارتفاع الخلايا وعرضها على اللابتوب */
@@ -68,16 +65,16 @@ body {
     width: 50%; 
     box-sizing: border-box;
     text-align: center;
-    /* **التعديل (1)**: إزالة الحشو الداخلي لتمكين الصورة من ملء العرض */
+    /* **التعديل الحاسم (2)**: إزالة الحشو الداخلي للسماح للصورة بالملء */
     padding: 0; 
-    min-height: unset; 
-    background-color: white; /* إعادة الخلفية البيضاء إلى الخلايا الفردية */
+    min-height: 400px; /* تحديد ارتفاع أدنى لتساوي الخلايا */
+    background-color: white; 
     
+    /* استخدام Flexbox داخل الخلية لتوزيع المحتوى */
     display: flex; 
     flex-direction: column; 
-    justify-content: flex-start; 
+    justify-content: space-between; /* لدفع النص إلى الأسفل */
     align-items: center; 
-    /* **التعديل (2)**: الحدود تكون على الخلايا الفردية الآن */
     border: 3px solid silver; 
     margin-bottom: 0; 
 }
@@ -88,7 +85,7 @@ body {
     max-width: 100%; 
     height: 250px; 
     display: block;
-    /* **التعديل (1)**: إزالة الهوامش لتلتصق الصورة بالحدود */
+    /* **التعديل**: إزالة الهوامش */
     margin: 0; 
     object-fit: contain; 
     flex-shrink: 0;
@@ -101,7 +98,7 @@ body {
     font-family: Arial;
     display: block;
     margin-top: 0; 
-    /* **التعديل**: إضافة حشو لترك مسافة حول النص (10 بكسل) */
+    /* إضافة حشو حول النص فقط */
     padding: 10px; 
 }
 
@@ -135,14 +132,14 @@ body {
         margin: 20px auto; 
         border: none;
         padding: 0;
+        /* العودة لوضع العرض الافتراضي للهاتف */
         display: block; 
     }
-
+    
     .product-card tr {
+        /* العودة لوضع العرض الافتراضي للهاتف */
         display: table-row; 
         width: 100%;
-        gap: 0; /* إلغاء الـ gap على الهاتف */
-        margin-bottom: 0; /* إلغاء المسافة بين الصفوف على الهاتف */
     }
 
     .product-card th, .product-card td {
@@ -155,6 +152,8 @@ body {
         min-height: unset; 
         text-align: center;
         vertical-align: top;
+        /* إلغاء Flexbox على الهاتف */
+        display: table-cell;
     }
     
     .product-card img {

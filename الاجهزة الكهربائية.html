@@ -41,9 +41,9 @@ body {
     max-width: 95%;
     width: 700px; 
     margin: 20px auto; 
-    background-color: transparent; /* خلفية شفافة للفراغات */
+    background-color: transparent; 
     border: none;
-    /* **التعديل**: إنشاء تباعد بين الخلايا بمقدار 10px */
+    /* **التعديل الحاسم (1)**: استخدام border-spacing للتباعد المطلوب (10px) */
     border-spacing: 10px; 
     border-collapse: separate; 
     padding: 0; 
@@ -56,8 +56,6 @@ body {
     /* العودة إلى وضع عرض الجدول التقليدي */
     display: table-row; 
     width: 100%; 
-    gap: 0;
-    margin-bottom: 0; 
 }
 
 /* توحيد ارتفاع الخلايا وعرضها على اللابتوب */
@@ -65,9 +63,9 @@ body {
     width: 50%; 
     box-sizing: border-box;
     text-align: center;
-    /* **التعديل الحاسم (2)**: إزالة الحشو الداخلي للسماح للصورة بالملء */
+    /* **التعديل الحاسم**: إزالة الحشو تماماً للسماح للصورة بالملء */
     padding: 0; 
-    min-height: 400px; /* تحديد ارتفاع أدنى لتساوي الخلايا */
+    min-height: 400px; /* تحديد ارتفاع أدنى لتساوي الخلايا عمودياً */
     background-color: white; 
     
     /* استخدام Flexbox داخل الخلية لتوزيع المحتوى */
@@ -75,17 +73,17 @@ body {
     flex-direction: column; 
     justify-content: space-between; /* لدفع النص إلى الأسفل */
     align-items: center; 
-    border: 3px solid silver; 
+    border: 1px solid silver; 
     margin-bottom: 0; 
 }
 
 /* توحيد صور اللابتوب: تحديد ارتفاع ثابت وتكبير العرض لأقصى حد */
 .product-card img {
-    /* **التعديل الحاسم (1)**: السماح للصورة بالوصول إلى أقصى عرض */
+    /* **التعديل الحاسم (2)**: السماح للصورة بالوصول إلى أقصى عرض */
     max-width: 100%; 
     height: 250px; 
     display: block;
-    /* **التعديل**: إزالة الهوامش */
+    /* **التعديل الحاسم (2)**: إزالة الهوامش لتلتصق الصورة بالحدود */
     margin: 0; 
     object-fit: contain; 
     flex-shrink: 0;
@@ -98,7 +96,7 @@ body {
     font-family: Arial;
     display: block;
     margin-top: 0; 
-    /* إضافة حشو حول النص فقط */
+    /* **التعديل**: إضافة حشو حول النص فقط لإبعاده عن الحدود */
     padding: 10px; 
 }
 
@@ -132,12 +130,12 @@ body {
         margin: 20px auto; 
         border: none;
         padding: 0;
-        /* العودة لوضع العرض الافتراضي للهاتف */
+        /* إلغاء border-spacing على الهاتف */
+        border-spacing: 0; 
         display: block; 
     }
-    
+
     .product-card tr {
-        /* العودة لوضع العرض الافتراضي للهاتف */
         display: table-row; 
         width: 100%;
     }

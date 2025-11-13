@@ -1,65 +1,168 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <head>
-<title>صفحة المشرفين</title>
-<meta charset="UTF-8">
-<style>
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
-.buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
-.button {
-Display: inline-block;
-Padding: 15px 30px;
-Background-color: #1e90ff;
-Color: white;
-Text-decoration: none;
-Border-radius: 10px;
-Font-size: 25px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #ff0000;}
-</style>
-</head>
-<body bgcolor="azure" style="background-image:url('صفحة المشرفين.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-<center><img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
-<font SIZE="7" color="white" face="DecoType Naskh Variants">مرحباً بكم في صفحة المشرفين</font></b>
-<pre>
-<table bgcolor="white" border="3" bordercolor="silver" align="center" height="20" width="50">
-<tr>
-<th><font size="6" color="blue">ارقام التواصل</font></th>
-<th><font size="6" color="blue">التخصص</font></th>
-<th><font size="6" color="blue">الاسم</font></th>
-</tr>
-<tr>
-<td><font size="6" color="black" face="arial"><center>775328516</font></td>
-<td><font size="6" color="black" face="arial"><center>BIM</font></td>
-<td><font size="6" color="black" face="arial"><center>عبدالله ناظم فضل</font></td>
-</tr>
-<tr>
-<td><font size="6" color="black" face="arial"><center>773127831</font></td>
-<td><font size="6" color="black" face="arial"><center>BIM</font></td>
-<td><font size="6" color="black" face="arial"><center>احمد مصطفى عبدالرحمن</font></td>
-</tr>
-<tr>
-<td><font size="6" color="black" face="arial"><center>770784994</font></td>
-<td><font size="6" color="black" face="arial"><center>BIM</font></td>
-<td><font size="6" color="black" face="arial"><center>محمد عمار محمد</font></td>
-</tr>
-<tr>
-<td><font size="6" color="black" face="arial"><center>778592018</font></td>
-<td><font size="6" color="black" face="arial"><center>BIM</font></td>
-<td><font size="6" color="black" face="arial"><center>عمر عمار محمد</font></td>
-</tr>
-</table>
+    <title>صفحة المشرفين</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+        /* 1. تنسيقات عامة للجسم والخلفية (ضمان ملء الشاشة) */
+        body {
+            /* إزالة سمة bgcolor القديمة */
+            background-image: url('صفحة المشرفين.png'); 
+            background-repeat: no-repeat;
+            /* **cover تضمن أن الخلفية تملأ الشاشة بالكامل** */
+            background-size: cover; 
+            background-position: center center;
+            /* يزيل المسافة البيضاء الافتراضية حول الصفحة */
+            margin: 0; 
+            padding: 20px;
+            min-height: 100vh; /* تضمن أن الجسم يغطي كامل الارتفاع المرئي */
+            display: flex; /* لمركزة المحتوى داخل الجسم */
+            flex-direction: column;
+            align-items: center;
+        }
 
-<div class="buttons-container">
-<a href="index.html" class="button">العودة</a>
-</div>
-</pre>
+        /* تنسيق لمركزة المحتوى داخل وسم <center> أو <div> */
+        .page-content {
+            width: 100%;
+            max-width: 1200px; /* تحديد أقصى عرض على شاشات اللابتوب الكبيرة */
+            padding: 20px;
+            /* إضافة خلفية شفافة للمحتوى ليكون مقروءًا فوق صورة الخلفية */
+            background-color: rgba(255, 255, 255, 0.1); 
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* 2. تنسيق الشعار والعنوان */
+        img {
+            max-width: 100%; /* ضمان عدم تجاوز الشعار لعرض الشاشة */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            font-size: 3em; /* استخدام وحدات قياس مرنة (em) */
+            color: white;
+            /* إزالة وسم <font> القديم واستخدام CSS */
+            font-family: 'DecoType Naskh Variants', Arial, sans-serif; 
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* لتحسين الرؤية */
+        }
+
+        /* 3. تنسيق الجدول (جعله متجاوبًا) */
+        table {
+            width: 95%; /* **الجدول الآن مرن ويأخذ 95% من عرض الحاوية** */
+            max-width: 800px; /* لا يتجاوز 800 بكسل على الشاشات الكبيرة */
+            border-collapse: collapse; /* لإزالة الفراغات المزدوجة بين الحدود */
+            margin: 20px auto; /* توسيط الجدول */
+            background-color: white;
+        }
+
+        th, td {
+            /* padding مرن للخلايا */
+            padding: 10px 5px; 
+            border: 3px solid silver;
+            text-align: center;
+            /* أحجام خطوط مرنة */
+            font-size: 1.2em; 
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: blue;
+            font-size: 1.5em;
+        }
+
+        /* 4. تنسيق الأزرار (Buttons) */
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #1e90ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* يمنع الكلمة من الانقسام */
+        }
+
+        .button:hover {
+            background-color: #ff0000;
+        }
+
+        /* 5. استعلام الوسائط (Media Query) لتحسين العرض على الجوال */
+        @media (max-width: 600px) {
+            /* إذا كان عرض الشاشة أقل من 600 بكسل (الجوالات) */
+            
+            .page-title {
+                font-size: 2em; /* تصغير العنوان ليتناسب مع الجوال */
+            }
+
+            th, td {
+                font-size: 1em; /* تصغير خط الجدول */
+                padding: 8px 3px;
+                /* إخفاء عمود التخصص أو أرقام التواصل إذا كان الجدول مزدحمًا */
+                /* مثال: 
+                :nth-child(2) تحدد العمود الثاني (التخصص)
+                
+                &:nth-child(2) { display: none; }
+                */
+            }
+            
+            table {
+                /* استخدام 100% من العرض على الجوال لزيادة المساحة */
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-content"> 
+        <img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350">
+        <h1 class="page-title">مرحباً بكم في صفحة المشرفين</h1>
+        
+        <table>
+            <tr>
+                <th>ارقام التواصل</th>
+                <th>التخصص</th>
+                <th>الاسم</th>
+            </tr>
+            <tr>
+                <td>775328516</td>
+                <td>BIM</td>
+                <td>عبدالله ناظم فضل</td>
+            </tr>
+            <tr>
+                <td>773127831</td>
+                <td>BIM</td>
+                <td>احمد مصطفى عبدالرحمن</td>
+            </tr>
+            <tr>
+                <td>770784994</td>
+                <td>BIM</td>
+                <td>محمد عمار محمد</td>
+            </tr>
+            <tr>
+                <td>778592018</td>
+                <td>BIM</td>
+                <td>عمر عمار محمد</td>
+            </tr>
+        </table>
+
+        <div class="buttons-container">
+            <a href="index.html" class="button">العودة</a>
+        </div>
+    </div>
 </body>
 
 </html>

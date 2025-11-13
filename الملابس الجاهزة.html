@@ -22,6 +22,18 @@ Font-size: 40px;
 Font-weight: bold;
 Transition: background-color 0.3s ease;}
 .button:hover{Background-color: #a97142;}
+
+/* إضافة تنسيق CSS إضافي لضمان عرض صور أكبر وتناسب الأجهزة */
+table img {
+    width: 100%; /* اجعل الصورة تملأ عرض الخلية بالكامل */
+    height: auto;
+    max-width: 250px; /* لضمان ألا تتجاوز حجماً معيناً في الشاشات الكبيرة */
+    display: block; /* للتخلص من أي مسافات زائدة أسفل الصورة */
+}
+table th, table td {
+    vertical-align: top;
+    text-align: center;
+}
 </style>
 </head>
 <body bgcolor="beige" style="background-image:url('خلفية صفحة الملابس.jpeg'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
@@ -30,8 +42,10 @@ Transition: background-color 0.3s ease;}
 <b><font SIZE="6" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
 _______________________________________<p></font>
 <font color="black" SIZE="7" face="DecoType Naskh Variants">مرحباً بكم في صفحة الملابس الجاهزة </font><p>
-<table bgcolor="white" border="3" bordercolor="silver" align="center" width="400" cellspacing="3" cellpadding="5">
-<center><tr>
+<table bgcolor="white" border="3" bordercolor="silver" align="center" width="600" cellspacing="10" cellpadding="5">
+<col width="50%">
+<col width="50%">
+<tr>
 <th><a href="صورة 1.html"><IMG SRC="صورة 1.PNG" ALT="ملابس جاهزة" align="center"><p>
 <FONT color="red" SIZE="4" FACE="ARIAL">،طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح
 وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي</a>
@@ -93,3 +107,4 @@ _______________________________________<p></font>
 </div><p>
 </body>
 </html>
+ 

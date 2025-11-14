@@ -16,17 +16,17 @@
             color: #333;
             text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 0; /* تم حذف الـ padding هنا ونقله إلى الـ main-container */
         }
 
         /* حاوية المحتوى لتركيزه */
         .main-container {
-            /* تم توسيع العرض إلى 98% */
-            width: 98%; 
-            margin: 0 auto;
-            /* تم زيادة التعبئة */
+            /* التعديل 1: لتركيز الحاوية في المنتصف */
+            width: 80%; /* تم تقليل العرض لجعله أكثر وضوحًا في المنتصف */
+            margin: 30px auto; /* ترك مساحة علوية وسفلية وتوسيط أفقي */
+            /* ----------------------------------------------- */
+
             padding: 30px; 
-            /* تم زيادة الشفافية (0.5) */
             background-color: rgba(255, 255, 255, 0.5); 
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -48,7 +48,9 @@
         }
         
         .welcome-title {
-            font-size: 34px; 
+            /* التعديل 2: تصغير حجم الخط */
+            font-size: 28px; 
+            /* ------------------------ */
             color: #1e90ff;
             font-family: 'DecoType Naskh Variants', serif;
             margin-top: 20px;

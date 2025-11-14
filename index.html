@@ -1,138 +1,168 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-<title>BuyZone</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>BuyZone - سرعة في التوصيل وجودة في المنتج</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* التنسيق الأساسي للصفحة */
+        body {
+            background-color: #f0ffff; /* لون أزور فاتح كخلفية احتياطية */
+            background-image: url('خلفية الصفحة الرئيسية.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            font-family: 'Tahoma', sans-serif; /* خط افتراضي أفضل */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
 
-<style>
-/* 1. زيادة حجم الخطوط في الجسم بشكل افتراضي */
-body {
-    margin: 0; /* لإزالة الهوامش الافتراضية */
-    padding: 0;
-}
-   
-    .welcome-slogan {
-    font-size: 18px;
-    color: darkorange;
-    font-family: Tahoma;
-    display: block;
-    margin-bottom: 20px;
+        /* حاوية المحتوى لتركيزه */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شفافة لتوضيح المحتوى */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-        .page-title {
-    color: black;
-    font-size: 20px;
-    font-family: 'DecoType Naskh Variants';
-    display: block;
-    margin-bottom: 20px;
-.container {
-    text-align: center;
-}
+        /* تنسيق الشعار والعنوان */
+        .logo-img {
+            display: block;
+            margin: 0 auto 10px auto;
+            max-width: 100%; /* ضمان التجاوب */
+            height: auto;
+        }
+        
+        .slogan {
+            font-size: 24px;
+            color: darkorange;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .welcome-title {
+            font-size: 48px;
+            color: #1e90ff;
+            font-family: 'DecoType Naskh Variants', serif;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
 
-/* 2. تحسين تنسيقات العنوان H1 (رغم عدم وجوده مباشرة، ولكن لتنظيف CSS) */
-H1 {
-    font-size: 1.7em; /* استخدام وحدة em الأكبر */
-    margin-bottom: 10px; /* زيادة الهامش */
-}
+        /* تنسيق الأقسام/العروض (الروابط والصور) */
+        .offer-link {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 40px;
+            padding: 15px;
+            border: 2px solid darkorange;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
 
-/* 3. تنسيق حاوية الأزرار */
-.buttons-container {
-    display: flex;
-    gap: 30px; /* زيادة المسافة بين الأزرار */
-    justify-content: center;
-    margin-top: 20px;
-}
+        .offer-link:hover {
+            background-color: #fff8e1; /* لون فاتح عند المرور */
+            border-color: #ff0000;
+        }
 
-/* 4. تكبير زر "صفحة المشرفين" */
-.button {
-    display: inline-block;
-    Padding: 20px 30px; /* زيادة padding لتكبير حجم الزر */
-    Background-color: orange;
-    Color: white;
-    Text-decoration: none;
-    Border-radius: 30px;
-    Font-size: 24px; /* زيادة حجم الخط */
-    Font-weight: bold;
-    Transition: background-color 0.3s ease;
-}
+        .offer-image {
+            display: block;
+            margin: 0 auto 10px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-.button:hover {
-    Background-color: #ff0000;
-}
+        .offer-text {
+            color: #333; /* لون أغمق للنص لتحسين القراءة */
+            font-size: 22px;
+            font-family: 'Arial', sans-serif;
+            margin-top: 10px;
+        }
 
-/* 5. تنسيق المحتوى داخل <pre> لضبط التباعد على الجوال */
-pre {
-    white-space: pre-wrap; /* يسمح للنصوص داخل pre بالالتفاف */
-    word-wrap: break-word;
-    text-align: center;
-    margin: 0; /* إزالة هامش pre الافتراضي */
-}
-
-/* 6. تنسيق الصور الإعلانية لضمان ظهورها بحجم مناسب على الجوال */
-A IMG {
-    /* جعل الصور مرنة وتأخذ كامل عرض شاشة الجوال تقريباً */
-    max-width: 90%; 
-    height: auto;
-    display: block; /* لضمان أخذ سطر جديد */
-    margin: 20px auto; /* توسيط الصور */
-}
-</style>
-
-<script>
-window.alert('مرحبا بكم في موقع "Buyzone" \n تابع هذه الصفحة حتى لاتفوتك العروض والخصومات الجديدة');
-</script>
-
+        /* تنسيق زر المشرفين */
+        .contact-message {
+            font-size: 24px;
+            color: orange;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+        }
+        
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.1s;
+        }
+        
+        .button:hover {
+            background-color: #ff0000;
+            transform: translateY(-2px); /* تأثير خفيف عند المرور */
+        }
+        
+        .footer-note {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+    </style>
+    <script>
+        // إبقاء النافذة المنبثقة للترحيب
+        window.onload = function() {
+             alert('مرحباً بكم في موقع "BuyZone" \n تابع هذه الصفحة حتى لا تفوتك العروض والخصومات الجديدة');
+        };
+    </script>
 </head>
 
-<body bgcolor="azure" style="background-image:url('خلفية الصفحة الرئيسية.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
+<body>
 
-<center>
-<img src="الشعار بدون خلفية.png" alt="BuyZone" width="90%" style="max-width: 350px;"><br>
+<div class="main-container">
 
-<b>
-    <font SIZE="6" color="darkorange" face="Tahoma">
-        سرعةٌ في التوصيل ... وجودةٌ في المنتج 
-        <br> 
-        <hr style="border: 1px solid darkorange; width: 60%; margin: 10px auto;"> <p></p>
-    </font>
+    <img src="الشعار بدون خلفية.png" alt="BuyZone" class="logo-img" height="250" width="350">
+    
+    <p class="slogan">سرعةٌ في التوصيل ... وجودةٌ في المنتج</p>
+    <hr style="border: 1px solid darkorange; width: 50%; margin: 10px auto 30px auto;">
+    
+    <h1 class="welcome-title">مرحباً بكم في متجرنا الالكتروني <br>"باي زون"</h1>
 
-    <font color="#1e90ff" SIZE="8" face="DecoType Naskh Variants"> "مرحباً بكم في متجرنا الالكتروني 
-        <p>"باي زون</p>
-    </font>
-</b>
+    <a href="الاجهزة الكهربائية.html" class="offer-link">
+        <img src="1.PNG" alt="خصم %25" class="offer-image" height="250" width="450">
+        <p class="offer-text">لا تفوت الفرصة واضغط هنا لكسب عرض 25% <br> على جميع الأجهزة الكهربائية</p>
+    </a>
 
-<pre>
-<A HREF="الاجهزة الكهربائية.html"><IMG SRC="1.PNG" ALT="خصم %25">
-<FONT COLOR="white" SIZE="3" FACE="ARIAL"> لاتفوت الفرصة واضغط هنا لكسب عرض %25 
-    على جميع الاجهزة الكهربائية
-</font></a>
-<p>
-<A HREF="الملابس الجاهزة.html"><IMG SRC="2.PNG" ALT="خصم %15">
-<FONT COLOR="white" SIZE="3" FACE="ARIAL"> لاتفوت الفرصة واضغط هنا لكسب عرض %15
-    على جميع الطقومات الشبابية والرجالية
-</font></a>
-<p>
-<p></p>
-<p></p>
-<p></p>
-<p>
-    <font size="4" color="orange" face="arial"> "في حال وجود اي مشكلة او استفسار
-        <p>فلا تتردد بالتواصل معنا على صفحة المشرفين"</font>
+    <a href="الملابس الجاهزة.html" class="offer-link">
+        <img src="2.PNG" alt="خصم %15" class="offer-image" height="250" width="450">
+        <p class="offer-text">لا تفوت الفرصة واضغط هنا لكسب عرض 15% <br> على جميع الأطقم الشبابية والرجالية</p>
+    </a>
+
+    <p class="contact-message">في حال وجود أي مشكلة أو استفسار، فلا تتردد بالتواصل معنا على صفحة المشرفين</p>
     
     <div class="buttons-container">
         <a href="صفحة المشرفين.html" class="button">صفحة المشرفين</a>
     </div>
-</p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
 
-<font size="5" color="black" face="arial"> "تابع هذه الصفحة حتى لاتفوتك العروض والخصومات"
-</font>
-</pre>
-</center>
+    <p class="footer-note">تابع هذه الصفحة حتى لا تفوتك العروض والخصومات الجديدة</p>
+    
+</div>
 
 </body>
 </html>

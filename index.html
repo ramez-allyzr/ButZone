@@ -7,12 +7,12 @@
     <style>
         /* التنسيق الأساسي للصفحة */
         body {
-            background-color: #f0ffff; /* لون أزور فاتح كخلفية احتياطية */
+            background-color: #f0ffff;
             background-image: url('خلفية الصفحة الرئيسية.png');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
-            font-family: 'Tahoma', sans-serif; /* خط افتراضي أفضل */
+            font-family: 'Tahoma', sans-serif;
             color: #333;
             text-align: center;
             margin: 0;
@@ -24,7 +24,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شفافة لتوضيح المحتوى */
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -33,19 +33,21 @@
         .logo-img {
             display: block;
             margin: 0 auto 10px auto;
-            max-width: 100%; /* ضمان التجاوب */
+            max-width: 100%;
             height: auto;
         }
         
         .slogan {
-            font-size: 24px;
+            /* تم تصغيره من 24px */
+            font-size: 22px; 
             color: darkorange;
             font-weight: bold;
             margin-bottom: 5px;
         }
         
         .welcome-title {
-            font-size: 48px;
+            /* تم تصغيره من 48px */
+            font-size: 40px; 
             color: #1e90ff;
             font-family: 'DecoType Naskh Variants', serif;
             margin-top: 20px;
@@ -64,7 +66,7 @@
         }
 
         .offer-link:hover {
-            background-color: #fff8e1; /* لون فاتح عند المرور */
+            background-color: #fff8e1;
             border-color: #ff0000;
         }
 
@@ -77,15 +79,17 @@
         }
 
         .offer-text {
-            color: #333; /* لون أغمق للنص لتحسين القراءة */
-            font-size: 22px;
+            color: #333;
+            /* تم تصغيره من 22px */
+            font-size: 18px; 
             font-family: 'Arial', sans-serif;
             margin-top: 10px;
         }
 
         /* تنسيق زر المشرفين */
         .contact-message {
-            font-size: 24px;
+            /* تم تصغيره من 24px */
+            font-size: 20px; 
             color: orange;
             margin-top: 40px;
             margin-bottom: 20px;
@@ -114,11 +118,12 @@
         
         .button:hover {
             background-color: #ff0000;
-            transform: translateY(-2px); /* تأثير خفيف عند المرور */
+            transform: translateY(-2px);
         }
         
         .footer-note {
-            font-size: 18px;
+            /* تم تصغيره من 18px */
+            font-size: 16px; 
             color: #333;
             margin-top: 20px;
             font-weight: 500;
@@ -126,7 +131,6 @@
         
     </style>
     <script>
-        // إبقاء النافذة المنبثقة للترحيب
         window.onload = function() {
              alert('مرحباً بكم في موقع "BuyZone" \n تابع هذه الصفحة حتى لا تفوتك العروض والخصومات الجديدة');
         };

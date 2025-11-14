@@ -1,68 +1,126 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <head>
 <title>BuyZone</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
 <style>
-Body
-.container {text-align: center;}
-H1 {font-size: 24px;
-Margin-bottom: 20px;}
+/* 1. زيادة حجم الخطوط في الجسم بشكل افتراضي */
+body {
+    font-size: 18px; /* حجم خط أساسي أكبر قليلاً */
+    margin: 0; /* لإزالة الهوامش الافتراضية */
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+/* 2. تحسين تنسيقات العنوان H1 (رغم عدم وجوده مباشرة، ولكن لتنظيف CSS) */
+H1 {
+    font-size: 2.5em; /* استخدام وحدة em الأكبر */
+    margin-bottom: 25px; /* زيادة الهامش */
+}
+
+/* 3. تنسيق حاوية الأزرار */
 .buttons-container {
-Display: flex;
-Gap: 20px;
-Justify-content: center;}
+    display: flex;
+    gap: 30px; /* زيادة المسافة بين الأزرار */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 4. تكبير زر "صفحة المشرفين" */
 .button {
-Display: inline-block;
-Padding: 15px 20px;
-Background-color: orange;
-Color: white;
-Text-decoration: none;
-Border-radius: 30px;
-Font-size: 20px;
-Font-weight: bold;
-Transition: background-color 0.3s ease;}
-.button:hover{Background-color: #ff0000;}
+    display: inline-block;
+    Padding: 20px 30px; /* زيادة padding لتكبير حجم الزر */
+    Background-color: orange;
+    Color: white;
+    Text-decoration: none;
+    Border-radius: 30px;
+    Font-size: 24px; /* زيادة حجم الخط */
+    Font-weight: bold;
+    Transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    Background-color: #ff0000;
+}
+
+/* 5. تنسيق المحتوى داخل <pre> لضبط التباعد على الجوال */
+pre {
+    white-space: pre-wrap; /* يسمح للنصوص داخل pre بالالتفاف */
+    word-wrap: break-word;
+    text-align: center;
+    margin: 0; /* إزالة هامش pre الافتراضي */
+}
+
+/* 6. تنسيق الصور الإعلانية لضمان ظهورها بحجم مناسب على الجوال */
+A IMG {
+    /* جعل الصور مرنة وتأخذ كامل عرض شاشة الجوال تقريباً */
+    max-width: 90%; 
+    height: auto;
+    display: block; /* لضمان أخذ سطر جديد */
+    margin: 20px auto; /* توسيط الصور */
+}
 </style>
+
 <script>
 window.alert('مرحبا بكم في موقع "Buyzone" \n تابع هذه الصفحة حتى لاتفوتك العروض والخصومات الجديدة');
 </script>
+
 </head>
+
 <body bgcolor="azure" style="background-image:url('خلفية الصفحة الرئيسية.png'); background-repeat: no-repeat;background-size: cover; background-position: center center;">
-<center><img src="الشعار بدون خلفية.png" alt="BuyZone" height="250" width="350"><br>
-<b><font SIZE="5" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج <br> 
-_______________________________________<p></font>
-<font color="#1e90ff" SIZE="7" face="DecoType Naskh Variants">"مرحباً بكم في متجرنا الالكتروني 
-  <p>"باي زون</font><p>
+
+<center>
+<img src="الشعار بدون خلفية.png" alt="BuyZone" width="90%" style="max-width: 350px;"><br>
+
+<b>
+    <font SIZE="6" color="darkorange" face="Tahoma">
+        سرعةٌ في التوصيل ... وجودةٌ في المنتج 
+        <br> 
+        <hr style="border: 1px solid darkorange; width: 60%; margin: 10px auto;"> <p></p>
+    </font>
+
+    <font color="#1e90ff" SIZE="8" face="DecoType Naskh Variants"> "مرحباً بكم في متجرنا الالكتروني 
+        <p>"باي زون</p>
+    </font>
+</b>
+
 <pre>
+<A HREF="الاجهزة الكهربائية.html"><IMG SRC="1.PNG" ALT="خصم %25">
+<FONT COLOR="white" SIZE="7" FACE="ARIAL"> لاتفوت الفرصة واضغط هنا لكسب عرض %25 
+    على جميع الاجهزة الكهربائية
+</font></a>
+<p>
+<A HREF="الملابس الجاهزة.html"><IMG SRC="2.PNG" ALT="خصم %15">
+<FONT COLOR="white" SIZE="7" FACE="ARIAL"> لاتفوت الفرصة واضغط هنا لكسب عرض %15
+    على جميع الطقومات الشبابية والرجالية
+</font></a>
+<p>
+<p></p>
+<p></p>
+<p></p>
+<p>
+    <font size="7" color="orange" face="arial"> "في حال وجود اي مشكلة او استفسار
+        <p>فلا تتردد بالتواصل معنا على صفحة المشرفين"</font>
+    
+    <div class="buttons-container">
+        <a href="صفحة المشرفين.html" class="button">صفحة المشرفين</a>
+    </div>
+</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 
-<A HREF="الاجهزة الكهربائية.html"><IMG SRC="1.PNG" ALT="خصم %25" HEIGHT="250" WIDTH="450">
-<FONT COLOR="white" SIZE="6" FACE="ARIAL">لاتفوت الفرصة واضغط هنا لكسب عرض %25 
-على جميع الاجهزة الكهربائية</font></a>
-<p>
-<A HREF="الملابس الجاهزة.html"><IMG SRC="2.PNG" ALT="خصم %15" HEIGHT="250" WIDTH="450">
-<FONT COLOR="white" SIZE="6" FACE="ARIAL">لاتفوت الفرصة واضغط هنا لكسب عرض %15
-على جميع الطقومات الشبابية والرجالية</font></a>
-<p>
-<p>
-<p>
-<p><font size="6" color="orange" face="arial">"في حال وجود اي مشكلة او استفسار
-  <p>فلا تتردد بالتواصل معنا على صفحة المشرفين"</font>
-<div class="buttons-container">
-<a href="صفحة المشرفين.html" class="button">صفحة المشرفين</a>
-</div>
-<p>
-  <p>
-    <p>
-<p>
-<p>
-      <p>
-<font size="4" color="black" face="arial">"تابع هذه الصفحة حتى لاتفوتك العروض والخصومات"</font>
+<font size="5" color="black" face="arial"> "تابع هذه الصفحة حتى لاتفوتك العروض والخصومات"
+</font>
 </pre>
+</center>
+
 </body>
-
 </html>
-
-
-
-
-

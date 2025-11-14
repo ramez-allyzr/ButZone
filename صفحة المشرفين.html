@@ -4,126 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <style>
-        /* 1. تنسيقات عامة للجسم والخلفية (ضمان ملء الشاشة) */
-        body {
-            /* إزالة سمة bgcolor القديمة */
-            background-image: url('صفحة المشرفين.png'); 
-            background-repeat: no-repeat;
-            /* **cover تضمن أن الخلفية تملأ الشاشة بالكامل** */
-            background-size: cover; 
-            background-position: center center;
-            /* يزيل المسافة البيضاء الافتراضية حول الصفحة */
-            margin: 0; 
-            padding: 20px;
-            min-height: 100vh; /* تضمن أن الجسم يغطي كامل الارتفاع المرئي */
-            display: flex; /* لمركزة المحتوى داخل الجسم */
-            flex-direction: column;
-            align-items: center;
-        }
+body .container {
+  text-align: center;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.button {
+  display: inline-block;
+  padding: 40px 80px;
+  background-color: #FF0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #a97142;
+}
 
-        /* تنسيق لمركزة المحتوى داخل وسم <center> أو <div> */
-        .page-content {
-            width: 100%;
-            max-width: 1200px; /* تحديد أقصى عرض على شاشات اللابتوب الكبيرة */
-            padding: 20px;
-            /* إضافة خلفية شفافة للمحتوى ليكون مقروءًا فوق صورة الخلفية */
-            background-color: rgba(255, 255, 255, 0.1); 
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+/* التعديل هنا */
+table {
+  width: 96%;            /* <-- أخذ 96% من عرض الصفحة */
+  border: 3px solid silver;
+  background-color: white;
+  border-collapse: collapse;
+}
 
-        /* 2. تنسيق الشعار والعنوان */
-        img {
-            max-width: 100%; /* ضمان عدم تجاوز الشعار لعرض الشاشة */
-            height: auto;
-            margin-bottom: 10px;
-        }
+/* تكبير الصور داخل الجدول */
+table img {
+  width: 350px;
+  height: auto;
+}
 
-        .page-title {
-            font-size: 3em; /* استخدام وحدات قياس مرنة (em) */
-            color: white;
-            /* إزالة وسم <font> القديم واستخدام CSS */
-            font-family: 'DecoType Naskh Variants', Arial, sans-serif; 
-            margin-top: 0;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* لتحسين الرؤية */
-        }
+/* تكبير الخط داخل الجدول */
+td, th {
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;       /* <-- الخط أصبح أكبر */
+  font-weight: bold;
+}
+</style>
 
-        /* 3. تنسيق الجدول (جعله متجاوبًا) */
-        table {
-            width: 95%; /* **الجدول الآن مرن ويأخذ 95% من عرض الحاوية** */
-            max-width: 800px; /* لا يتجاوز 800 بكسل على الشاشات الكبيرة */
-            border-collapse: collapse; /* لإزالة الفراغات المزدوجة بين الحدود */
-            margin: 20px auto; /* توسيط الجدول */
-            background-color: white;
-        }
-
-        th, td {
-            /* padding مرن للخلايا */
-            padding: 10px 5px; 
-            border: 3px solid silver;
-            text-align: center;
-            /* أحجام خطوط مرنة */
-            font-size: 1.2em; 
-        }
-
-        th {
-            background-color: #f0f0f0;
-            color: blue;
-            font-size: 1.5em;
-        }
-
-        /* 4. تنسيق الأزرار (Buttons) */
-        .buttons-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #1e90ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 25px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            white-space: nowrap; /* يمنع الكلمة من الانقسام */
-        }
-
-        .button:hover {
-            background-color: #ff0000;
-        }
-
-        /* 5. استعلام الوسائط (Media Query) لتحسين العرض على الجوال */
-        @media (max-width: 600px) {
-            /* إذا كان عرض الشاشة أقل من 600 بكسل (الجوالات) */
-            
-            .page-title {
-                font-size: 2em; /* تصغير العنوان ليتناسب مع الجوال */
-            }
-
-            th, td {
-                font-size: 1em; /* تصغير خط الجدول */
-                padding: 8px 3px;
-                /* إخفاء عمود التخصص أو أرقام التواصل إذا كان الجدول مزدحمًا */
-                /* مثال: 
-                :nth-child(2) تحدد العمود الثاني (التخصص)
-                
-                &:nth-child(2) { display: none; }
-                */
-            }
-            
-            table {
-                /* استخدام 100% من العرض على الجوال لزيادة المساحة */
-                width: 100%; 
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -166,3 +96,4 @@
 </body>
 
 </html>
+

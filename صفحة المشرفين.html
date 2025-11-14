@@ -1,94 +1,156 @@
 <!DOCTYPE html>
-<html lang="ar">
 <head>
-<title>الملابس الجاهزة</title>
-<meta charset="UTF-8">
-<style>
-body .container {
-  text-align: center;
-}
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-.buttons-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-.button {
-  display: inline-block;
-  padding: 40px 80px;
-  background-color: #FF0000;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 40px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-.button:hover {
-  background-color: #a97142;
-}
-/* تكبير الجدول ليكون مثل الصورة الثانية */
-table {
-  width: 800px; /* كان 400 */
-  border: 3px solid silver;
-  background-color: white;
-  border-collapse: collapse;
-}
-table img {
-  width: 350px; /* تكبير الصور داخل الجدول */
-  height: auto;
-}
-td, th {
-  padding: 15px; /* جعل المسافات أكبر */
-  text-align: center;
-}
-</style>
-</head>
-<body bgcolor="beige" style="background-image:url('خلفية صفحة الملابس.jpeg'); background-repeat:no-repeat; background-size:cover; background-position:center center;">
-<center>
-  <img src="الشعار بدون خلفية.png" alt="BuyZone" height="400" width="575"><br>
-  <b><font size="6" color="darkorange" face="Tahoma">سرعةٌ في التوصيل ... وجودةٌ في المنتج<br> _______________________________________<p></font>
-  <font color="black" size="7" face="DecoType Naskh Variants">مرحباً بكم في صفحة الملابس الجاهزة</font><p>
+    <title>صفحة المشرفين</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+        /* 1. تنسيقات عامة للجسم والخلفية */
+        body {
+            background-image: url('صفحة المشرفين.png'); 
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center center;
+            margin: 0; 
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-  <table align="center" cellspacing="3" cellpadding="5">
-    <tr>
-      <th><a href="صورة 1.html"><img src="صورة 1.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم كاجوال أنيق وعصري. يتكون من قميص بيج فاتح وبنطلون جينز أزرق فاتح، وحذاء رياضي أبيض كلاسيكي</a></th>
-      <th><a href="صورة 2.html"><img src="صورة 2.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم شبابي كاجوال أنيق. يتكون من قميص رمادي غامق وبنطلون بلون بيج مائل للزيتوني، يكمل الإطلالة بحذاء رياضي أبيض</a></th>
-    </tr>
-    <tr>
-      <td><a href="صورة 3.html"><img src="صورة 3.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم شبابي أنيق وهادئ. يتكون من قميص وردي مائل للبني وبنطلون بيج فاتح يكتمل الطقم بحذاء رياضي أبيض</a></td>
-      <td><a href="صورة 4.html"><img src="صورة 4.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم أنيق وعصري يجمع بين جاكيت أسود بأزرار بيضاء مع قميص داخلي أبيض وبنطلون بيج فاتح، ويكمل الطقم بحذاء لوفر أسود</a></td>
-    </tr>
-    <tr>
-      <td><a href="صورة 5.html"><img src="صورة 5.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم رجالي أحادي اللون بالكامل. باللون الرمادي الداكن المائل للأسود، يتألف من قميص بأكمام طويلة وجيوب على الصدر، وبنطلون رسمي، وحذاء لوفر أسود</a></td>
-      <td><a href="صورة 6.html"><img src="صورة 6.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم شبابي كاجوال ومريح. يتكون من قميص بولو بني مع ياقة بيج وبنطلون بيج فاتح بخصر مرن، ويكمل الطقم حذاء رياضي متعدد الألوان (بيج وبني وأخضر)</a></td>
-    </tr>
-    <tr>
-      <td><a href="صورة 7.html"><img src="صورة 7.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم شبابي كاجول الذهبي. يتكون من قميص أصفر فاتح .مع قميص داخلي أبيض،وبنطلون أخضر زيتوني داكن يكمل الإطلالة حذاء رياضي أبيض</a></td>
-      <td><a href="صورة 8.html"><img src="صورة 8.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم شبابي كلاسيكي وأنيق. يتكون من قميص أبيض وبنطلون كحلي داكن، وحذاء رياضي أبيض</a></td>
-    </tr>
-    <tr>
-      <td><a href="صورة 9.html"><img src="صورة 9.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم صيفي منعش. يتكون من قميص أزرق فاتح، وبنطلون جينز أبيض، وحذاء رياضي أبيض</a></td>
-      <td><a href="صورة 10.html"><img src="صورة 10.PNG" alt="ملابس جاهزة"><p>
-      <font color="red" size="4" face="ARIAL">طقم شبابي عصري وجريء. يتكون من قميص بولو أخضر فاتح مخطط بخطوط طولية، وبنطلون أسود واسع الساق. ويكتمل الطقم بحذاء رياضي أبيض بنعل برتقالي</a></td>
-    </tr>
-  </table>
-  <p>
-  <div class="buttons-container">
-    <a href="index.html" class="button">العودة الى صفحة الموقع الرسمية</a>
-  </div>
-</center>
+        .page-content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); 
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* 2. تنسيق الشعار (تصغيره قليلاً) */
+        img {
+            max-width: 90%; /* تم تصغيره قليلاً من 100% */
+            height: auto;
+            margin-bottom: 10px;
+            /* يمكن أيضاً التحكم في حجمه عن طريق الارتفاع الأقصى */
+            max-height: 220px; 
+        }
+
+        /* 3. تنسيق العنوان الترحيبي (تصغيره قليلاً) */
+        .page-title {
+            font-size: 2.7em; /* تم تصغيره قليلاً من 3em */
+            color: white;
+            font-family: 'DecoType Naskh Variants', Arial, sans-serif; 
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 4. تنسيق الجدول (عرض 96%) */
+        table {
+            width: 96%; /* **تم تعديل العرض ليصبح 96%** */
+            max-width: 850px; /* زيادة بسيطة في أقصى عرض للجدول */
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: white;
+        }
+
+        /* 5. تنسيق خلايا الجدول (تكبير حجم الخط قليلاً) */
+        th, td {
+            padding: 12px 7px; /* زيادة بسيطة في المساحة الداخلية */
+            border: 3px solid silver;
+            text-align: center;
+            font-size: 1.35em; /* **تم تكبير حجم الخط قليلاً من 1.2em** */
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: blue;
+            font-size: 1.55em; /* تكبير بسيط لخط العناوين */
+        }
+
+        /* 6. تنسيق زر العودة (تصغيره قليلاً) */
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px; /* **تم تصغير padding لتقليل حجم الزر** */
+            background-color: #1e90ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 22px; /* **تم تصغير حجم خط الزر قليلاً من 25px** */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background-color: #ff0000;
+        }
+
+        /* 7. استعلام الوسائط للجوال (حافظ على الاستجابة) */
+        @media (max-width: 600px) {
+            
+            .page-title {
+                font-size: 2em;
+            }
+
+            th, td {
+                font-size: 1.1em; /* تعديل حجم الخط على الجوال ليتناسب مع التكبير الجديد */
+                padding: 8px 3px;
+            }
+            
+            table {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-content"> 
+        <img src="الشعار بدون خلفية.png" alt="BuyZone">
+        <h1 class="page-title">مرحباً بكم في صفحة المشرفين</h1>
+        
+        <table>
+            <tr>
+                <th>ارقام التواصل</th>
+                <th>التخصص</th>
+                <th>الاسم</th>
+            </tr>
+            <tr>
+                <td>775328516</td>
+                <td>BIM</td>
+                <td>عبدالله ناظم فضل</td>
+            </tr>
+            <tr>
+                <td>773127831</td>
+                <td>BIM</td>
+                <td>احمد مصطفى عبدالرحمن</td>
+            </tr>
+            <tr>
+                <td>770784994</td>
+                <td>BIM</td>
+                <td>محمد عمار محمد</td>
+            </tr>
+            <tr>
+                <td>778592018</td>
+                <td>BIM</td>
+                <td>عمر عمار محمد</td>
+            </tr>
+        </table>
+
+        <div class="buttons-container">
+            <a href="index.html" class="button">العودة</a>
+        </div>
+    </div>
 </body>
+
 </html>
